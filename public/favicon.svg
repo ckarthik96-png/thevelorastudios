@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0c0e12"/>
+  <path d="M16 18L32 48L48 18" stroke="url(#velora-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M24 18L32 34L40 18" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+  <circle cx="32" cy="18" r="2.5" fill="#e0a96d"/>
+  <defs>
+    <linearGradient id="velora-grad" x1="16" y1="18" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f5d061"/>
+      <stop offset="0.5" stop-color="#e0a96d"/>
+      <stop offset="1" stop-color="#9d6bf3"/>
+    </linearGradient>
+  </defs>
+</svg>
