@@ -1,70 +1,78 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight, Sparkles } from 'lucide-react';
-import { STUDIO_INFO } from '../data/studioData';
+import { Link, useLocation } from 'react-router-dom';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { STUDIO_CONFIG } from '../data/studioData';
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu whenever route changes
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [location.pathname]);
+
   const navLinks = [
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Process', href: '#process' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', path: '/' },
+    { name: 'About', path: '/about' },
+    { name: 'Services', path: '/services' },
+    { name: 'Our Work', path: '/work' },
+    { name: 'Insights', path: '/insights' },
+    { name: 'Contact', path: '/contact' }
   ];
 
-  const handleLinkClick = () => {
-    setMobileMenuOpen(false);
-  };
-
   return (
-    <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
-      <div className="container navbar-container">
-        {/* Brand Monogram & Logo */}
-        <a href="#" className="navbar-brand">
-          <div className="brand-logo-symbol">
-            <span>V</span>
-          </div>
-          <div className="brand-text">
-            <span className="brand-title">{STUDIO_INFO.name}</span>
-            <span className="brand-subtitle">Creative & Digital Studio</span>
-          </div>
-        </a>
+    <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="container nav-container">
+        {/* Brand Wordmark */}
+        <Link to="/" className="brand-logo" aria-label="The Velora Studios Home">
+          <span className="brand-name font-serif">VELORA<sup>®</sup></span>
+        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="desktop-nav" aria-label="Main Navigation">
-          <ul className="nav-links">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                <a href={link.href} className="nav-item">
-                  {link.name}
-                </a>
-              </li>
-            ))}
+        <nav className="desktop-navigation" aria-label="Primary Navigation">
+          <ul className="nav-menu">
+            {navLinks.map((link) => {
+              const isActive = link.path === '/' 
+                ? location.pathname === '/' 
+                : location.pathname.startsWith(link.path);
+
+              return (
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className={`nav-link ${isActive ? 'active' : ''}`}
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
-        {/* Action Button */}
-        <div className="navbar-actions">
-          <a href="#contact" className="btn btn-primary nav-cta">
+        {/* Header CTA Button */}
+        <div className="nav-actions">
+          <Link to="/contact" className="btn btn-primary nav-cta-btn">
             <span>Start a Project</span>
-            <ArrowUpRight size={16} />
-          </a>
+            <ArrowUpRight size={15} />
+          </Link>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu Trigger */}
           <button
-            className="mobile-toggle"
+            type="button"
+            className="mobile-menu-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
+            aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
             aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -72,25 +80,29 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer Navigation */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="mobile-drawer">
-          <div className="container mobile-drawer-inner">
-            <ul className="mobile-nav-links">
+        <div className="mobile-nav-drawer" role="dialog" aria-modal="true">
+          <div className="container mobile-drawer-content">
+            <span className="mobile-eyebrow">BRANDING · DIGITAL · CREATIVE</span>
+            <ul className="mobile-links-list">
               {navLinks.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} onClick={handleLinkClick} className="mobile-nav-item">
+                <li key={link.path}>
+                  <Link
+                    to={link.path}
+                    className={`mobile-nav-link font-serif ${location.pathname === link.path ? 'active' : ''}`}
+                  >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
-            <div className="mobile-drawer-footer">
-              <a href="#contact" onClick={handleLinkClick} className="btn btn-primary" style={{ width: '100%' }}>
+            <div className="mobile-drawer-bottom">
+              <Link to="/contact" className="btn btn-primary" style={{ width: '100%' }}>
                 <span>Start a Project</span>
                 <ArrowUpRight size={16} />
-              </a>
-              <p className="mobile-email">{STUDIO_INFO.email}</p>
+              </Link>
+              <p className="mobile-email-hint">{STUDIO_CONFIG.displayEmail}</p>
             </div>
           </div>
         </div>

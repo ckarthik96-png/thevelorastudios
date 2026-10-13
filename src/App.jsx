@@ -1,77 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Portfolio from './components/Portfolio';
-import Process from './components/Process';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
-import Modal from './components/Modal';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import ServicesPage from './pages/ServicesPage';
+import IndividualServicePage from './pages/IndividualServicePage';
+import WorkPage from './pages/WorkPage';
+import ProjectDetailPage from './pages/ProjectDetailPage';
+import InsightsPage from './pages/InsightsPage';
+import ArticleDetailPage from './pages/ArticleDetailPage';
+import ContactPage from './pages/ContactPage';
+import PrivacyPage from './pages/PrivacyPage';
+import TermsPage from './pages/TermsPage';
+import NotFoundPage from './pages/NotFoundPage';
 import './App.css';
 
 export default function App() {
-  const [modalState, setModalState] = useState({
-    isOpen: false,
-    type: null, // 'project' | 'privacy' | 'terms'
-    data: null
-  });
-
-  const [preselectedService, setPreselectedService] = useState('');
-
-  const handleOpenProject = (project) => {
-    setModalState({
-      isOpen: true,
-      type: 'project',
-      data: project
-    });
-  };
-
-  const handleOpenLegal = (type) => {
-    setModalState({
-      isOpen: true,
-      type: type,
-      data: null
-    });
-  };
-
-  const handleCloseModal = () => {
-    setModalState({
-      isOpen: false,
-      type: null,
-      data: null
-    });
-  };
-
-  const handleSelectService = (serviceTitle) => {
-    setPreselectedService(serviceTitle);
-  };
-
   return (
-    <div className="velora-app">
-      {/* Fixed Sticky Header Navigation */}
-      <Navbar />
+    <BrowserRouter>
+      <div className="velora-site-shell">
+        {/* Main Sticky Header */}
+        <Navbar />
 
-      {/* Main Content Sections */}
-      <main id="main-content">
-        <Hero />
-        <About />
-        <Services onSelectService={handleSelectService} />
-        <Portfolio onOpenProject={handleOpenProject} />
-        <Process />
-        <Contact preselectedService={preselectedService} />
-      </main>
+        {/* Dynamic Route Content */}
+        <main id="main-content" tabIndex={-1}>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:serviceSlug" element={<IndividualServicePage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/work/:projectSlug" element={<ProjectDetailPage />} />
+            <Route path="/insights" element={<InsightsPage />} />
+            <Route path="/insights/:articleSlug" element={<ArticleDetailPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
 
-      {/* Global Studio Footer */}
-      <Footer onOpenLegal={handleOpenLegal} />
-
-      {/* Interactive Modal for Projects & Legal Documentation */}
-      <Modal
-        isOpen={modalState.isOpen}
-        onClose={handleCloseModal}
-        type={modalState.type}
-        data={modalState.data}
-      />
-    </div>
+        {/* Global Footer */}
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
