@@ -94,6 +94,20 @@ main {
   text-decoration: none;
 }
 
+.site-logo-img {
+  height: 38px;
+  width: auto;
+  max-width: 175px;
+  object-fit: contain;
+  display: block;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.site-logo-img:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
 .brand-name {
   font-size: 1.65rem;
   font-weight: 600;
@@ -168,6 +182,9 @@ main {
     display: flex;
     align-items: center;
   }
+  .site-logo-img {
+    height: 32px;
+  }
 }
 
 /* Mobile Drawer */
@@ -190,12 +207,26 @@ main {
   height: 100%;
 }
 
+.mobile-drawer-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.mobile-drawer-logo {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
 .mobile-eyebrow {
   font-size: 0.75rem;
   letter-spacing: 0.1em;
   color: var(--accent-olive);
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 .mobile-links-list {
@@ -283,6 +314,28 @@ main {
   align-items: center;
   position: relative;
   z-index: 2;
+}
+
+.hero-brand-crest-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.hero-brand-crest-img {
+  height: 48px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 20px rgba(229, 168, 36, 0.18));
+  opacity: 0.95;
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+.hero-brand-crest-img:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 6px 24px rgba(229, 168, 36, 0.3));
 }
 
 .hero-pill-badge-wrap {
@@ -530,6 +583,13 @@ main {
   letter-spacing: 0.08em;
   color: #ffffff;
   font-weight: 600;
+}
+
+.slate-pill-emblem {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+  display: block;
 }
 
 .rec-dot {
@@ -1162,6 +1222,18 @@ main {
   padding: 40px;
   background-color: var(--bg-sand-light);
   border: 1px solid var(--border-light);
+}
+
+.about-card-brand-wrap {
+  margin-bottom: 24px;
+}
+
+.about-card-brand-logo {
+  height: 42px;
+  width: auto;
+  max-width: 190px;
+  object-fit: contain;
+  display: block;
 }
 
 .philosophy-card-title {
@@ -2433,6 +2505,26 @@ main {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+}
+
+.footer-brand-logo-link {
+  display: inline-block;
+  margin-bottom: 16px;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  display: block;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.footer-brand-logo-link:hover .footer-logo-img {
+  opacity: 0.82;
+  transform: translateY(-1px);
 }
 
 .footer-brand-title {

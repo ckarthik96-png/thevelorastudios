@@ -17,6 +17,15 @@ export default function HomePage() {
       <section className="hero-dark-showcase-section" id="hero">
         <div className="hero-ambient-glow" />
         <div className="container hero-dark-container">
+          {/* Studio Brand Emblem / Crest */}
+          <div className="hero-brand-crest-wrap">
+            <img
+              src="/logo.png"
+              alt="The Velora Studios"
+              className="hero-brand-crest-img"
+            />
+          </div>
+
           {/* Service Pill Badge */}
           <div className="hero-pill-badge-wrap">
             <div className="hero-pill-badge">
@@ -101,6 +110,7 @@ export default function HomePage() {
                 {/* Cinema Slate Header Overlay */}
                 <div className="cinema-slate-top">
                   <div className="slate-pill">
+                    <img src="/favicon.png" alt="" className="slate-pill-emblem" />
                     <span className="rec-dot" />
                     <span>THE VELORA STUDIOS SHOWREEL</span>
                   </div>

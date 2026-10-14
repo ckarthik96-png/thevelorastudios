@@ -40,8 +40,12 @@ export default function Footer() {
         <div className="footer-grid">
           {/* Column 1: Studio Identity */}
           <div className="footer-col-brand">
-            <Link to="/" className="footer-brand-title font-serif">
-              VELORA<sup>®</sup>
+            <Link to="/" className="footer-brand-logo-link" aria-label="The Velora Studios Home">
+              <img
+                src="/logo-dark.png"
+                alt="The Velora Studios"
+                className="footer-logo-img"
+              />
             </Link>
             <p className="footer-tagline">
               {STUDIO_CONFIG.tagline}

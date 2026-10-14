@@ -35,6 +35,13 @@ export default function AboutPage() {
 
             <div className="about-grid-col-right">
               <div className="about-philosophy-card">
+                <div className="about-card-brand-wrap">
+                  <img
+                    src="/logo-dark.png"
+                    alt="The Velora Studios"
+                    className="about-card-brand-logo"
+                  />
+                </div>
                 <span className="editorial-label">OUR PHILOSOPHY</span>
                 <h2 className="philosophy-card-title font-serif">
                   Design should do more than look good.

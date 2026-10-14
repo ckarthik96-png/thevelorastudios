@@ -36,9 +36,13 @@ export default function Navbar() {
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''} ${isDarkHeader ? 'header-dark-hero' : ''}`}>
       <div className="container nav-container">
-        {/* Brand Wordmark */}
+        {/* Brand Logo */}
         <Link to="/" className="brand-logo" aria-label="The Velora Studios Home">
-          <span className="brand-name font-serif">VELORA<sup>®</sup></span>
+          <img
+            src={isDarkHeader ? "/logo.png" : "/logo-dark.png"}
+            alt="The Velora Studios"
+            className="site-logo-img"
+          />
         </Link>
 
         {/* Desktop Navigation */}
@@ -87,7 +91,16 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="mobile-nav-drawer" role="dialog" aria-modal="true">
           <div className="container mobile-drawer-content">
-            <span className="mobile-eyebrow">BRANDING · DIGITAL · CREATIVE</span>
+            <div className="mobile-drawer-header">
+              <Link to="/" onClick={() => setMobileMenuOpen(false)} aria-label="The Velora Studios Home">
+                <img
+                  src="/logo-dark.png"
+                  alt="The Velora Studios"
+                  className="mobile-drawer-logo"
+                />
+              </Link>
+              <span className="mobile-eyebrow">BRANDING · DIGITAL · CREATIVE</span>
+            </div>
             <ul className="mobile-links-list">
               {navLinks.map((link) => (
                 <li key={link.path}>
