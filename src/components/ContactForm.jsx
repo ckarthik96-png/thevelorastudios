@@ -1,72 +1,55 @@
 import React, { useState } from 'react';
-import { Mail, MessageSquare, Calendar, Send, CheckCircle2, AlertCircle, ArrowUpRight } from 'lucide-react';
-import { STUDIO_CONFIG } from '../data/studioData';
+import { Send, CheckCircle2, AlertCircle, ArrowUpRight, MapPin, Mail, MessageSquare } from 'lucide-react';
+import { STUDIO_CONFIG, SERVICES_DATA } from '../data/studioData';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
+    name: '',
     company: '',
-    website: '',
-    service: 'Brand Strategy & Visual Identity',
-    budget: '$10,000 – $25,000',
-    timeline: 'Within 4 – 8 weeks',
-    description: '',
-    privacyConsent: false
+    email: '',
+    phone: '',
+    service: 'Advertising & Brand Films',
+    budget: '$5,000 – $15,000',
+    deliveryDate: '',
+    projectDescription: '',
+    referenceLink: ''
   });
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const servicesOptions = [
-    'Brand Strategy & Visual Identity',
-    'Website Design & Development',
-    'Creative Design & Direction',
-    'Digital Experiences',
-    'Content & Visual Storytelling'
-  ];
-
   const budgetOptions = [
-    'Under $10,000',
-    '$10,000 – $25,000',
-    '$25,000 – $50,000',
-    '$50,000+',
-    'Ongoing Creative Retainer'
-  ];
-
-  const timelineOptions = [
-    'Immediately / ASAP',
-    'Within 1 – 2 months',
-    'Within 3 – 6 months',
-    'Exploring options'
+    'Under $5,000',
+    '$5,000 – $15,000',
+    '$15,000 – $30,000',
+    '$30,000 – $60,000',
+    '$60,000+',
+    'Monthly Content Package'
   ];
 
   const validate = () => {
     const errs = {};
-    if (!formData.fullName.trim() || formData.fullName.trim().length < 2) {
-      errs.fullName = 'Full name is required (minimum 2 characters).';
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      errs.name = 'Please provide your name.';
     }
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email.trim()) {
-      errs.email = 'Business email is required.';
+      errs.email = 'Email address is required.';
     } else if (!emailPattern.test(formData.email.trim())) {
       errs.email = 'Please enter a valid email address.';
     }
-    if (!formData.description.trim() || formData.description.trim().length < 10) {
-      errs.description = 'Please describe your project or challenge (minimum 10 characters).';
-    }
-    if (!formData.privacyConsent) {
-      errs.privacyConsent = 'Please acknowledge that your information will be used to respond to your enquiry.';
+    if (!formData.projectDescription.trim() || formData.projectDescription.trim().length < 10) {
+      errs.projectDescription = 'Please tell us a little about your project (minimum 10 characters).';
     }
     return errs;
   };
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: value
     }));
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: null }));
@@ -82,288 +65,253 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true);
-
-    // Simulate async submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-    }, 1100);
+    }, 1000);
   };
 
   const handleReset = () => {
     setFormData({
-      fullName: '',
-      email: '',
+      name: '',
       company: '',
-      website: '',
-      service: 'Brand Strategy & Visual Identity',
-      budget: '$10,000 – $25,000',
-      timeline: 'Within 4 – 8 weeks',
-      description: '',
-      privacyConsent: false
+      email: '',
+      phone: '',
+      service: 'Advertising & Brand Films',
+      budget: '$5,000 – $15,000',
+      deliveryDate: '',
+      projectDescription: '',
+      referenceLink: ''
     });
     setErrors({});
     setIsSubmitted(false);
   };
 
   return (
-    <div className="contact-component-wrap">
-      {/* 4 Direct Contact Methods Grid */}
-      <div className="direct-contact-channels-grid">
-        {/* Email */}
-        <a href={`mailto:${STUDIO_CONFIG.displayEmail}`} className="contact-channel-card">
-          <div className="channel-icon-circle">
-            <Mail size={20} />
-          </div>
-          <div className="channel-card-body">
-            <span className="channel-title">Direct Email</span>
-            <span className="channel-value">{STUDIO_CONFIG.displayEmail}</span>
-            <span className="channel-note">Responses within 24–48 hours</span>
-          </div>
-          <ArrowUpRight size={16} className="channel-arrow" />
-        </a>
-
-        {/* WhatsApp */}
-        <a href={STUDIO_CONFIG.whatsappUrl} target="_blank" rel="noopener noreferrer" className="contact-channel-card">
-          <div className="channel-icon-circle">
-            <MessageSquare size={20} />
-          </div>
-          <div className="channel-card-body">
-            <span className="channel-title">WhatsApp Chat</span>
-            <span className="channel-value">{STUDIO_CONFIG.displayWhatsapp}</span>
-            <span className="channel-note">Direct principal messaging</span>
-          </div>
-          <ArrowUpRight size={16} className="channel-arrow" />
-        </a>
-
-        {/* Consultation Booking */}
-        <a href={STUDIO_CONFIG.bookingUrl} target="_blank" rel="noopener noreferrer" className="contact-channel-card">
-          <div className="channel-icon-circle">
-            <Calendar size={20} />
-          </div>
-          <div className="channel-card-body">
-            <span className="channel-title">Schedule Call</span>
-            <span className="channel-value">30-Min Discovery</span>
-            <span className="channel-note">Select a convenient time slot</span>
-          </div>
-          <ArrowUpRight size={16} className="channel-arrow" />
-        </a>
-      </div>
-
-      {/* Project Enquiry Form */}
-      <div className="enquiry-form-container">
-        {isSubmitted ? (
-          <div className="form-submission-success-box" role="status" aria-live="polite">
-            <div className="success-icon-badge">
-              <CheckCircle2 size={36} />
-            </div>
-            <h3 className="success-heading font-serif">Enquiry Submitted</h3>
-            <p className="success-message-text">
-              Thank you for telling us about your project. Your enquiry has been submitted. 
-              We'll follow up using the contact details you provided.
+    <section className="section-spacing contact-section-wrapper" id="contact">
+      <div className="container">
+        <div className="contact-main-card">
+          <div className="contact-header-block text-center">
+            <span className="editorial-label">START A PROJECT</span>
+            <h2 className="contact-main-headline font-serif">
+              Let’s make your next idea worth watching.
+            </h2>
+            <p className="contact-main-subtext">
+              Planning a campaign, launching a product, organising an event, or building your content calendar? Tell us what you have in mind.
             </p>
-            <div className="success-summary-pill">
-              <span>{formData.fullName}</span> • <span>{formData.service}</span>
+            <div className="contact-location-tag font-mono">
+              <MapPin size={15} />
+              <span>Based in Bangalore. Serving clients in India and internationally.</span>
             </div>
-            <button type="button" onClick={handleReset} className="btn btn-secondary" style={{ marginTop: '24px' }}>
-              <span>Send Another Enquiry</span>
-            </button>
           </div>
-        ) : (
-          <form onSubmit={handleSubmit} noValidate className="project-enquiry-form">
-            <div className="form-legend">
-              <h3 className="form-legend-title font-serif">Project Enquiry Form</h3>
-              <p className="form-legend-sub">Fill out the brief below and we will prepare a tailored proposal.</p>
-            </div>
 
-            {/* Row 1: Full Name & Business Email */}
-            <div className="form-grid-row">
-              <div className="form-group">
-                <label htmlFor="fullName" className="form-label">
-                  Full name <span className="req-star">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleChange}
-                  placeholder="e.g. Maya Chen"
-                  className={`form-input ${errors.fullName ? 'has-error' : ''}`}
-                  required
-                />
-                {errors.fullName && <span className="field-error-text">{errors.fullName}</span>}
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Business email <span className="req-star">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="e.g. maya@company.com"
-                  className={`form-input ${errors.email ? 'has-error' : ''}`}
-                  required
-                />
-                {errors.email && <span className="field-error-text">{errors.email}</span>}
-              </div>
-            </div>
-
-            {/* Row 2: Company Name & Website URL */}
-            <div className="form-grid-row">
-              <div className="form-group">
-                <label htmlFor="company" className="form-label">
-                  Company name <span className="optional-tag">(Optional)</span>
-                </label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="e.g. Studio Vance"
-                  className="form-input"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="website" className="form-label">
-                  Website URL <span className="optional-tag">(Optional)</span>
-                </label>
-                <input
-                  type="url"
-                  id="website"
-                  name="website"
-                  value={formData.website}
-                  onChange={handleChange}
-                  placeholder="https://..."
-                  className="form-input"
-                />
-              </div>
-            </div>
-
-            {/* Row 3: Service Required & Estimated Budget */}
-            <div className="form-grid-row">
-              <div className="form-group">
-                <label htmlFor="service" className="form-label">
-                  Service required <span className="req-star">*</span>
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleChange}
-                  className="form-input select-input"
-                  required
+          <div className="contact-form-inner-container">
+            {isSubmitted ? (
+              <div className="contact-success-state" role="alert">
+                <div className="success-icon-wrap">
+                  <CheckCircle2 size={44} className="success-check-icon" />
+                </div>
+                <h3 className="success-title font-serif">Thank you for getting in touch.</h3>
+                <p className="success-desc">
+                  We have received your project details. A creative producer from The Velora Studios will review your brief and get back to you within 24 hours.
+                </p>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  onClick={handleReset}
+                  style={{ marginTop: '20px' }}
                 >
-                  {servicesOptions.map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
-                  ))}
-                </select>
+                  <span>Submit Another Enquiry</span>
+                </button>
               </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="project-enquiry-form" noValidate>
+                <div className="form-grid-row">
+                  {/* Name */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-name" className="field-label">
+                      Name <span className="req-star">*</span>
+                    </label>
+                    <input
+                      id="field-name"
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="Your full name"
+                      className={`form-input ${errors.name ? 'input-error' : ''}`}
+                      autoComplete="name"
+                    />
+                    {errors.name && <span className="field-error-msg">{errors.name}</span>}
+                  </div>
 
-              <div className="form-group">
-                <label htmlFor="budget" className="form-label">
-                  Estimated budget <span className="optional-tag">(Optional)</span>
-                </label>
-                <select
-                  id="budget"
-                  name="budget"
-                  value={formData.budget}
-                  onChange={handleChange}
-                  className="form-input select-input"
-                >
-                  {budgetOptions.map((b) => (
-                    <option key={b} value={b}>{b}</option>
-                  ))}
-                </select>
-              </div>
-            </div>
+                  {/* Company / Brand */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-company" className="field-label">
+                      Company / Brand
+                    </label>
+                    <input
+                      id="field-company"
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleChange}
+                      placeholder="Company or project name"
+                      className="form-input"
+                      autoComplete="organization"
+                    />
+                  </div>
+                </div>
 
-            {/* Row 4: Timeline */}
-            <div className="form-group">
-              <label htmlFor="timeline" className="form-label">
-                Expected timeline <span className="optional-tag">(Optional)</span>
-              </label>
-              <select
-                id="timeline"
-                name="timeline"
-                value={formData.timeline}
-                onChange={handleChange}
-                className="form-input select-input"
-              >
-                {timelineOptions.map((t) => (
-                  <option key={t} value={t}>{t}</option>
-                ))}
-              </select>
-            </div>
+                <div className="form-grid-row">
+                  {/* Email */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-email" className="field-label">
+                      Email <span className="req-star">*</span>
+                    </label>
+                    <input
+                      id="field-email"
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="you@company.com"
+                      className={`form-input ${errors.email ? 'input-error' : ''}`}
+                      autoComplete="email"
+                    />
+                    {errors.email && <span className="field-error-msg">{errors.email}</span>}
+                  </div>
 
-            {/* Row 5: Project Description */}
-            <div className="form-group">
-              <label htmlFor="description" className="form-label">
-                Project description <span className="req-star">*</span>
-              </label>
-              <textarea
-                id="description"
-                name="description"
-                rows={4}
-                value={formData.description}
-                onChange={handleChange}
-                placeholder="Tell us about your business, your idea, objectives, or current challenges..."
-                className={`form-input textarea-input ${errors.description ? 'has-error' : ''}`}
-                required
-              />
-              {errors.description && <span className="field-error-text">{errors.description}</span>}
-            </div>
+                  {/* Phone / WhatsApp */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-phone" className="field-label">
+                      Phone / WhatsApp
+                    </label>
+                    <input
+                      id="field-phone"
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      placeholder="+91 / +971 / +1..."
+                      className="form-input"
+                      autoComplete="tel"
+                    />
+                  </div>
+                </div>
 
-            {/* Privacy Consent Checkbox */}
-            <div className="form-consent-group">
-              <label className="checkbox-label">
-                <input
-                  type="checkbox"
-                  name="privacyConsent"
-                  checked={formData.privacyConsent}
-                  onChange={handleChange}
-                  className="checkbox-input"
-                  required
-                />
-                <span>
-                  I agree to The Velora Studios storing and processing my details to reply to this project inquiry.
-                </span>
-              </label>
-              {errors.privacyConsent && <span className="field-error-text">{errors.privacyConsent}</span>}
-            </div>
+                <div className="form-grid-row">
+                  {/* Service Required */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-service" className="field-label">
+                      Service Required
+                    </label>
+                    <select
+                      id="field-service"
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="form-select"
+                    >
+                      {SERVICES_DATA.map((srv) => (
+                        <option key={srv.id} value={srv.title}>
+                          {srv.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="btn btn-primary submit-enquiry-btn"
-            >
-              {isSubmitting ? (
-                <span>Submitting Enquiry...</span>
-              ) : (
-                <>
-                  <span>Send Project Enquiry</span>
-                  <Send size={15} />
-                </>
-              )}
-            </button>
-          </form>
-        )}
+                  {/* Estimated Budget */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-budget" className="field-label">
+                      Estimated Budget
+                    </label>
+                    <select
+                      id="field-budget"
+                      name="budget"
+                      value={formData.budget}
+                      onChange={handleChange}
+                      className="form-select"
+                    >
+                      {budgetOptions.map((b) => (
+                        <option key={b} value={b}>{b}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="form-grid-row">
+                  {/* Target Delivery Date */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-delivery" className="field-label">
+                      Target Delivery Date
+                    </label>
+                    <input
+                      id="field-delivery"
+                      type="text"
+                      name="deliveryDate"
+                      value={formData.deliveryDate}
+                      onChange={handleChange}
+                      placeholder="e.g. End of next month / Q3 2026"
+                      className="form-input"
+                    />
+                  </div>
+
+                  {/* Reference Link */}
+                  <div className="form-field-group">
+                    <label htmlFor="field-ref" className="field-label">
+                      Reference Link
+                    </label>
+                    <input
+                      id="field-ref"
+                      type="url"
+                      name="referenceLink"
+                      value={formData.referenceLink}
+                      onChange={handleChange}
+                      placeholder="YouTube, Vimeo, website or moodboard URL"
+                      className="form-input"
+                    />
+                  </div>
+                </div>
+
+                {/* Tell Us About Your Project */}
+                <div className="form-field-group">
+                  <label htmlFor="field-desc" className="field-label">
+                    Tell Us About Your Project <span className="req-star">*</span>
+                  </label>
+                  <textarea
+                    id="field-desc"
+                    name="projectDescription"
+                    rows={4}
+                    value={formData.projectDescription}
+                    onChange={handleChange}
+                    placeholder="Tell us your goal, audience, preferred video style, approximate duration, and the deliverables you need."
+                    className={`form-textarea ${errors.projectDescription ? 'input-error' : ''}`}
+                  />
+                  {errors.projectDescription && (
+                    <span className="field-error-msg">{errors.projectDescription}</span>
+                  )}
+                </div>
+
+                {/* Submit Action */}
+                <div className="form-action-row">
+                  <button
+                    type="submit"
+                    className="btn btn-primary submit-btn-large"
+                    disabled={isSubmitting}
+                  >
+                    <span>{isSubmitting ? 'Sending Enquiry...' : 'Send Project Enquiry'}</span>
+                    <Send size={16} />
+                  </button>
+                  <span className="form-direct-hint font-mono">
+                    Direct inquiries: <a href={`mailto:${STUDIO_CONFIG.displayEmail}`}>{STUDIO_CONFIG.displayEmail}</a>
+                  </span>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
-
-      {/* Backend Integration Note for Studio Owner */}
-      <div className="backend-transparency-note">
-        <AlertCircle size={16} className="note-icon" />
-        <p>
-          <strong>Form Integration Note:</strong> Client-side validation is active. To route enquiries directly to <code>{STUDIO_CONFIG.displayEmail}</code> in production, connect this form action to Formspree, Resend, or a Cloudflare Worker.
-        </p>
-      </div>
-    </div>
+    </section>
   );
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowUp } from 'lucide-react';
-import { STUDIO_CONFIG } from '../data/studioData';
+import { STUDIO_CONFIG, SERVICES_DATA } from '../data/studioData';
 import BrandLogo from './BrandLogo';
 
 export default function Footer() {
@@ -17,17 +17,17 @@ export default function Footer() {
       <div className="footer-cta-banner">
         <div className="container footer-cta-container">
           <div className="footer-cta-text">
-            <span className="editorial-label">06 / LET'S TALK</span>
+            <span className="editorial-label">LET'S TALK</span>
             <h2 className="footer-cta-headline font-serif">
-              Your next chapter starts with a conversation.
+              Let’s make your next idea worth watching.
             </h2>
             <p className="footer-cta-subtext">
-              Tell us about your business, your idea or the challenge you're ready to solve. Let's explore what we can create together.
+              Planning a campaign, launching a product, organising an event, or building your content calendar? Tell us what you have in mind.
             </p>
           </div>
           <div className="footer-cta-action">
             <Link to="/contact" className="btn btn-primary footer-main-cta">
-              <span>LET'S DISCUSS YOUR PROJECT</span>
+              <span>Start a Project</span>
               <ArrowUpRight size={17} />
             </Link>
           </div>
@@ -36,7 +36,7 @@ export default function Footer() {
 
       <div className="horizontal-divider" />
 
-      {/* Main Footer Navigation & Studio Details */}
+      {/* Main Footer Content */}
       <div className="container footer-main-content">
         <div className="footer-grid">
           {/* Column 1: Studio Identity */}
@@ -44,45 +44,50 @@ export default function Footer() {
             <Link to="/" className="footer-brand-logo-link" aria-label="The Velora Studios Home">
               <BrandLogo theme="light" size="lg" />
             </Link>
-            <p className="footer-tagline">
-              {STUDIO_CONFIG.tagline}
-            </p>
             <p className="footer-positioning">
-              {STUDIO_CONFIG.positioning}
+              Video production, advertising, motion graphics, and AI-powered storytelling—from the first idea to the final frame.
             </p>
-            <span className="footer-edge-badge">
-              Edge Hosted on Cloudflare Pages • thevelorastudios.com
-            </span>
+            <div className="footer-location-badge">
+              <span>Based in Bangalore • Serving clients globally</span>
+            </div>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* Column 2: Services */}
           <div className="footer-col">
-            <span className="footer-heading">Navigation</span>
+            <span className="footer-heading">Services</span>
             <ul className="footer-nav-list">
-              <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Studio</Link></li>
-              <li><Link to="/services">Services Overview</Link></li>
-              <li><Link to="/work">Selected Work</Link></li>
-              <li><Link to="/insights">Studio Insights</Link></li>
-              <li><Link to="/contact">Contact &amp; Enquiry</Link></li>
+              {SERVICES_DATA.map((srv) => (
+                <li key={srv.id}>
+                  <Link to="/services">{srv.title}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Column 3: Services */}
+          {/* Column 3: Explore */}
           <div className="footer-col">
-            <span className="footer-heading">Capabilities</span>
+            <span className="footer-heading">Explore</span>
             <ul className="footer-nav-list">
-              <li><Link to="/services/branding">Branding &amp; Visual Identity</Link></li>
-              <li><Link to="/services/web-design">Website Design &amp; Development</Link></li>
-              <li><Link to="/services/creative-design">Creative Design &amp; Direction</Link></li>
-              <li><Link to="/services">Digital Experiences</Link></li>
-              <li><Link to="/services">Content &amp; Visual Storytelling</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/work">Our Work</Link></li>
+              <li><Link to="/process">Our Process</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
 
-          {/* Column 4: Contact & Socials */}
+          {/* Column 4: Client Markets & Direct Channels */}
           <div className="footer-col">
-            <span className="footer-heading">Direct Channels</span>
+            <span className="footer-heading">Client Markets</span>
+            <ul className="footer-markets-list">
+              {STUDIO_CONFIG.clientMarkets.map((market) => (
+                <li key={market} className="market-item">
+                  <span className="market-dot" />
+                  <span>{market}</span>
+                </li>
+              ))}
+            </ul>
+
+            <span className="footer-heading" style={{ marginTop: '24px' }}>Direct Inquiries</span>
             <ul className="footer-nav-list">
               <li>
                 <a href={`mailto:${STUDIO_CONFIG.displayEmail}`} className="footer-direct-link">
@@ -94,21 +99,7 @@ export default function Footer() {
                   WhatsApp: {STUDIO_CONFIG.displayWhatsapp}
                 </a>
               </li>
-              <li>
-                <a href={STUDIO_CONFIG.bookingUrl} target="_blank" rel="noopener noreferrer" className="footer-direct-link">
-                  Book a Consultation ↗
-                </a>
-              </li>
             </ul>
-            <div className="footer-socials-row">
-              <a href={STUDIO_CONFIG.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-              <span>/</span>
-              <a href={STUDIO_CONFIG.socials.x} target="_blank" rel="noopener noreferrer" aria-label="X">X</a>
-              <span>/</span>
-              <a href={STUDIO_CONFIG.socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
-              <span>/</span>
-              <a href={STUDIO_CONFIG.socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub</a>
-            </div>
           </div>
         </div>
 
@@ -120,13 +111,18 @@ export default function Footer() {
 
           <div className="footer-legal-links">
             <Link to="/privacy">Privacy Policy</Link>
-            <span className="dot-sep">•</span>
-            <Link to="/terms">Website Terms</Link>
+            <span>•</span>
+            <Link to="/terms">Terms</Link>
           </div>
 
-          <button type="button" onClick={scrollToTop} className="scroll-top-action" aria-label="Scroll back to top">
-            <span>Back to top</span>
-            <ArrowUp size={14} />
+          <button
+            type="button"
+            className="back-to-top-btn"
+            onClick={scrollToTop}
+            aria-label="Back to Top of Page"
+          >
+            <span>Back to Top</span>
+            <ArrowUp size={15} />
           </button>
         </div>
       </div>

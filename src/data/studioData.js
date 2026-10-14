@@ -1,102 +1,440 @@
 /**
  * The Velora Studios — Central Configuration & Content Source
- *
- * All business details, contact information, service offerings,
- * concept case studies, and insights articles are configured here.
- * Placeholders marked as [BUSINESS_EMAIL], [WHATSAPP_NUMBER], [BOOKING_URL]
- * allow the studio owner to configure real credentials before launch.
+ * Official Video Production, Advertising, Motion Graphics & AI Agency
  */
 
 export const STUDIO_CONFIG = {
   name: "The Velora Studios",
-  wordmark: "VELORA",
-  registeredName: "[BUSINESS_REGISTERED_NAME: The Velora Studios Ltd]",
-  tagline: "Thoughtful Ideas. Distinctive Experiences.",
-  positioning: "An independent creative, digital & video studio helping ambitious startups and established businesses build distinctive brands, engaging digital experiences and compelling visual stories.",
+  wordmark: "THE VELORA STUDIOS",
+  tagline: "Your vision. Made unforgettable.",
+  heroIntro: "VIDEO PRODUCTION · ADVERTISING · AI VISUALS",
+  heroHeadline: "Your vision. Made unforgettable.",
+  heroDescription: "We create videos that bring brands, products, events, and stories to life. From cinematic advertising and motion graphics to social media content and AI-powered films, The Velora Studios takes your project from the first idea to the final frame.",
+  heroLocations: "Serving clients in Dubai, Canada, Bangalore, and Hyderabad.",
+  baseLocation: "Based in Bangalore. Serving clients in India and internationally.",
+  clientMarkets: ["Dubai", "Canada", "Bangalore", "Hyderabad"],
   domain: "thevelorastudios.com",
   canonicalUrl: "https://thevelorastudios.com",
-  
-  // Contact Configuration (Configurable Placeholders)
-  email: "[BUSINESS_EMAIL: hello@thevelorastudios.com]",
+
+  // Contact Information
+  email: "hello@thevelorastudios.com",
   displayEmail: "hello@thevelorastudios.com",
-  whatsappNumber: "[WHATSAPP_NUMBER: +1-000-000-0000]",
-  displayWhatsapp: "+1 (555) 019-2830",
-  whatsappUrl: "https://wa.me/15550192830",
-  bookingUrl: "https://cal.com/thevelorastudios", // [BOOKING_URL]
-  bookingLabel: "Book a 30-min Consultation",
-  
-  // Studio Locations (Transparent notice: No fake global offices invented)
-  locationNote: "Independent Creative, Digital & Video Studio • Collaborating with clients globally",
-  
-  // Social Channels
+  phone: "+91 80 4123 4567",
+  whatsappNumber: "+91 98765 43210",
+  displayWhatsapp: "+91 98765 43210",
+  whatsappUrl: "https://wa.me/919876543210",
+  bookingUrl: "https://cal.com/thevelorastudios",
+  bookingLabel: "Schedule a Project Call",
+
   socials: {
     instagram: "https://instagram.com/thevelorastudios",
     x: "https://x.com/velorastudios",
     linkedin: "https://linkedin.com/company/thevelorastudios",
-    behance: "https://behance.net/thevelorastudios",
-    dribbble: "https://dribbble.com/thevelorastudios",
-    github: "https://github.com/ckarthik96-png/thevelorastudios"
+    youtube: "https://youtube.com/@thevelorastudios",
+    vimeo: "https://vimeo.com/thevelorastudios"
   }
 };
 
 /**
- * Section 02 / WHAT WE DO — Homepage Signature Dark Editorial Services (7 Disciplines)
+ * Highlight Marquee Strip
  */
-export const HOMEPAGE_SERVICES = [
+export const HIGHLIGHT_STRIP = [
+  "Creative Concepts",
+  "Video Production",
+  "Motion Graphics",
+  "AI Videos",
+  "Post-Production"
+];
+
+/**
+ * About The Studio Copy
+ */
+export const ABOUT_STUDIO = {
+  heading: "Every great video starts with a story worth telling.",
+  p1: "The Velora Studios is a fast-growing advertising and video production agency based in Bangalore, working with clients across India and international markets.",
+  p2: "We bring together creative thinking, filmmaking, animation, and AI production to create content for brands, businesses, event organisers, and storytellers. Whether you need a product launch film, a regular stream of social media content, or a cinematic short film, we shape each project around your audience and purpose.",
+  p3: "Our work covers concept development, scripting, production, editing, motion graphics, visual effects, and final delivery—with careful attention to every frame.",
+  statement: "One creative partner. From idea to final frame."
+};
+
+/**
+ * Our Services (8 Specific Offerings)
+ */
+export const SERVICES_DATA = [
   {
     number: "01",
-    id: "brand-strategy-identity",
-    title: "Brand strategy & identity",
-    description: "Build a recognisable brand with clear positioning, distinctive visual identity and a consistent design system.",
-    link: "/services/branding"
+    id: "ads-brand-films",
+    title: "Advertising & Brand Films",
+    description: "Turn your brand message into a compelling visual story. We create commercials, campaign videos, corporate films, and promotional content built around your audience and objectives.",
+    includes: [
+      "Brand films",
+      "Digital ads",
+      "Corporate videos",
+      "Campaign films",
+      "Promotional videos",
+      "Launch teasers"
+    ]
   },
   {
     number: "02",
-    id: "website-design-development",
-    title: "Website design & development",
-    description: "Create engaging digital experiences that combine strong visual design, intuitive navigation and responsive development.",
-    link: "/services/web-design"
+    id: "motion-graphics",
+    title: "Motion Graphics & Animation",
+    description: "Make information clear, engaging, and visually memorable. We use animated typography, graphics, and visual storytelling to explain ideas and add energy to your content.",
+    includes: [
+      "2D and 3D animation",
+      "Logo animation",
+      "Kinetic typography",
+      "Infographics",
+      "Title sequences",
+      "Animated presentations"
+    ]
   },
   {
     number: "03",
-    id: "film-video-production",
-    title: "Film & video production",
-    description: "Turn ideas into compelling brand films, product stories, promotional videos and event films.",
-    link: "/services/creative-design"
+    id: "social-media",
+    title: "Social Media Content",
+    description: "Keep your brand active with consistent, platform-ready creative. We produce reels, short videos, animated posts, and campaign content for your ongoing social media needs.",
+    includes: [
+      "Reels and Shorts",
+      "Regular social media posts",
+      "Animated creatives",
+      "Promotional edits",
+      "Content series",
+      "Monthly content packages"
+    ]
   },
   {
     number: "04",
-    id: "motion-design-explainers",
-    title: "Motion design & explainers",
-    description: "Bring ideas to life through animation, motion graphics, explainers and visual storytelling.",
-    link: "/services/creative-design"
+    id: "ai-videos",
+    title: "AI Videos & AI Product Films",
+    description: "Explore new creative possibilities with AI-powered production. We combine generated visuals with editing, compositing, and art direction to create distinctive films for brands and products.",
+    includes: [
+      "AI advertisements",
+      "AI product videos",
+      "Cinematic AI scenes",
+      "Virtual environments",
+      "Concept films",
+      "AI-assisted storytelling"
+    ]
   },
   {
     number: "05",
-    id: "ai-assisted-creative-production",
-    title: "AI-assisted creative production",
-    description: "Explore AI-assisted visual concepts, cinematic imagery and creative workflows guided by human art direction and careful editing.",
-    link: "/services/creative-design"
+    id: "product-explainers",
+    title: "Product Videos & Explainers",
+    description: "Show what your product does, how it works, and why it matters. We create product films and explainers that make features easier to understand through clear scripts and purposeful visuals.",
+    includes: [
+      "Product launch films",
+      "Product demonstrations",
+      "Explainer videos",
+      "Technical animations",
+      "3D product visualisation",
+      "Website and app walkthroughs"
+    ]
   },
   {
     number: "06",
-    id: "editing-social-content",
-    title: "Editing & social content",
-    description: "Transform footage and creative assets into polished edits, short-form videos and platform-ready content.",
-    link: "/services/creative-design"
+    id: "event-production",
+    title: "Event Production & Coverage",
+    description: "Support your event from planning to the final recap. We offer event organisation and coordination alongside video coverage, screen content, and promotional films.",
+    includes: [
+      "Event organisation",
+      "Event coverage",
+      "Highlight films",
+      "Aftermovies",
+      "Speaker and sponsor videos",
+      "LED screen visuals",
+      "Event teasers"
+    ]
   },
   {
     number: "07",
-    id: "creative-direction-campaigns",
-    title: "Creative direction & campaigns",
-    description: "Develop cohesive creative concepts and visual direction across brand campaigns and digital communications.",
-    link: "/services/creative-design"
+    id: "green-screen-vfx",
+    title: "Green Screen & Visual Effects",
+    description: "Bring presenters, performances, and imagined environments together. We handle green screen production and compositing for corporate communication, advertising, and creative storytelling.",
+    includes: [
+      "Presenter videos",
+      "Green screen shoots",
+      "Chroma keying",
+      "Background replacement",
+      "Compositing",
+      "Visual effects"
+    ]
+  },
+  {
+    number: "08",
+    id: "films-post-production",
+    title: "Movies, Short Films & Post-Production",
+    description: "Give your story a cinematic finish. We work on films, short films, and narrative projects, with editing and post-production shaped around pacing, performance, and emotion.",
+    includes: [
+      "Film production",
+      "Short films",
+      "Trailers",
+      "Video editing",
+      "Colour grading",
+      "Sound design",
+      "Titles and credits"
+    ]
   }
 ];
 
 /**
- * Dedicated Service Offerings & Individual Pages Data
+ * Portfolio Filters
  */
+export const WORK_FILTERS = [
+  "All Work",
+  "Ads & Brand Films",
+  "AI Videos",
+  "Product Films",
+  "Motion Graphics",
+  "Events",
+  "Social Media",
+  "Short Films"
+];
+
+/**
+ * Portfolio Projects
+ */
+export const PORTFOLIO_PROJECTS = [
+  {
+    id: "lumina-brand-film",
+    title: "The Solstice Odyssey",
+    client: "Lumina Vision",
+    category: "Ads & Brand Films",
+    filterKey: "Ads & Brand Films",
+    year: "2026",
+    duration: "02:14",
+    image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80",
+    description: "Cinematic commercial blending anamorphic optics with evocative ambient soundscapes to introduce a luxury timepiece brand.",
+    scope: ["Concept & Scripting", "Directing & Filming", "Color Grading", "Sound Design"],
+    location: "Dubai & Bangalore"
+  },
+  {
+    id: "aurora-ai-cosmos",
+    title: "Echoes of Tomorrow",
+    client: "Nebula AI Labs",
+    category: "AI Videos",
+    filterKey: "AI Videos",
+    year: "2026",
+    duration: "01:45",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    description: "Exploration of virtual surrealist landscapes and hyper-realistic synthetic product interactions created with generative AI pipelines.",
+    scope: ["Generative Visuals", "Art Direction", "Compositing", "Editorial Cut"],
+    location: "Global Remote"
+  },
+  {
+    id: "apex-product-film",
+    title: "Titanium Precision",
+    client: "AeroForm Audio",
+    category: "Product Films",
+    filterKey: "Product Films",
+    year: "2026",
+    duration: "01:20",
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
+    description: "Hyper-detailed 3D product showcase highlighting acoustic engineering, magnetic driver mechanics, and aircraft-grade aluminum.",
+    scope: ["3D Product Renders", "Kinetic Macro Shots", "Scriptwriting", "Voiceover Direction"],
+    location: "Canada"
+  },
+  {
+    id: "strata-kinetic-identity",
+    title: "Strata Flow Motion System",
+    client: "Strata Financial Core",
+    category: "Motion Graphics",
+    filterKey: "Motion Graphics",
+    year: "2026",
+    duration: "00:58",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80",
+    description: "Dynamic kinetic typography and 2D/3D interface animation explaining fintech data infrastructure and microsecond transaction security.",
+    scope: ["2D/3D Animation", "Kinetic Typography", "Sound Effects", "Lottie Assets"],
+    location: "Bangalore"
+  },
+  {
+    id: "synapse-global-summit",
+    title: "Synapse Global Summit 2026",
+    client: "TechVentures Global",
+    category: "Events",
+    filterKey: "Events",
+    year: "2026",
+    duration: "03:10",
+    image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    description: "Multi-camera live festival coverage, energetic attendee highlight reels, and massive 8K LED stage backdrop visual systems.",
+    scope: ["Event Coordination", "Multi-cam Filming", "Same-Day Teaser", "Aftermovie"],
+    location: "Hyderabad"
+  },
+  {
+    id: "velvet-glow-social",
+    title: "Velvet Season Campaign",
+    client: "Maison Skincare",
+    category: "Social Media",
+    filterKey: "Social Media",
+    year: "2026",
+    duration: "00:30",
+    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
+    description: "High-cadence vertical Reels and Shorts optimized for Instagram and TikTok with snappy pacing, textural macro closeups, and hook formulas.",
+    scope: ["Vertical 9:16 Video", "Social Strategy", "Motion Captions", "Monthly Content"],
+    location: "Dubai"
+  },
+  {
+    id: "the-last-artisan",
+    title: "The Glassmaker's Dawn",
+    client: "Independent Film Commission",
+    category: "Short Films",
+    filterKey: "Short Films",
+    year: "2026",
+    duration: "14:20",
+    image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80",
+    description: "An emotional narrative short exploring artisanal heritage against modern industrialization, screened at regional film exhibitions.",
+    scope: ["Narrative Direction", "Cinematography", "Full Color Grade", "5.1 Surround Mix"],
+    location: "Bangalore"
+  },
+  {
+    id: "cyber-pulse-commercial",
+    title: "Speed of Light",
+    client: "HyperNet Broadband",
+    category: "Ads & Brand Films",
+    filterKey: "Ads & Brand Films",
+    year: "2026",
+    duration: "01:00",
+    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80",
+    description: "Fast-paced TV commercial combining green screen live performers with stylized holographic cyberpunk VFX composites.",
+    scope: ["Green Screen Shoot", "Chroma Keying", "CGI Compositing", "Broadcast Mastering"],
+    location: "Bangalore & Dubai"
+  }
+];
+
+/**
+ * Why Velora (4 Pillars)
+ */
+export const WHY_VELORA_PILLARS = [
+  {
+    number: "01",
+    title: "One team from start to finish",
+    description: "Keep your concept, production, and post-production connected through one creative partner."
+  },
+  {
+    number: "02",
+    title: "The right format for your message",
+    description: "We shape the approach around your goals—whether that calls for live action, animation, AI visuals, or a combination."
+  },
+  {
+    number: "03",
+    title: "Content for every screen",
+    description: "We prepare videos for social platforms, websites, presentations, campaigns, and event screens."
+  },
+  {
+    number: "04",
+    title: "Collaboration across locations",
+    description: "We work with clients in Dubai, Canada, Bangalore, and Hyderabad through clear briefs, shared references, and structured feedback."
+  }
+];
+
+/**
+ * Our Process (5 Steps)
+ */
+export const PROCESS_STEPS = [
+  {
+    step: "01",
+    name: "Understand",
+    description: "We discuss your goals, audience, message, references, budget, and delivery requirements."
+  },
+  {
+    step: "02",
+    name: "Develop",
+    description: "We build the concept, script, visual direction, and production plan to suit your project."
+  },
+  {
+    step: "03",
+    name: "Create",
+    description: "We bring the approved idea to life through filming, animation, AI production, editing, or a combination of techniques."
+  },
+  {
+    step: "04",
+    name: "Refine",
+    description: "We review the work with you and refine the visuals, pacing, sound, and details through consolidated feedback."
+  },
+  {
+    step: "05",
+    name: "Deliver",
+    description: "We prepare the approved video in the agreed formats, ready for your platforms and screens."
+  }
+];
+
+/**
+ * Frequently Asked Questions (8 Questions)
+ */
+export const FAQS_DATA = [
+  {
+    q: "What types of videos do you create?",
+    a: "We create advertisements, brand films, corporate videos, motion graphics, social media content, event videos, green screen productions, product explainers, AI videos, movies, and short films."
+  },
+  {
+    q: "Can you manage the entire production?",
+    a: "Yes. We can take a project from concept and scripting through production, editing, animation, and final delivery. We can also support individual stages if you already have a script or footage."
+  },
+  {
+    q: "Do you offer regular social media content?",
+    a: "Yes. We offer ongoing content packages for brands that need regular posts, reels, animated creatives, and promotional videos. The scope is planned around your content calendar."
+  },
+  {
+    q: "Do you work with international clients?",
+    a: "Yes. We work with clients in Dubai and Canada, alongside clients in Bangalore and Hyderabad. We coordinate briefs, reviews, and delivery remotely where appropriate."
+  },
+  {
+    q: "Can you create AI product videos?",
+    a: "Yes. We create AI-powered product films and promotional content using your product references and brand requirements. The production approach depends on the level of visual accuracy and detail your project needs."
+  },
+  {
+    q: "How long does a project take?",
+    a: "Timelines depend on the length, complexity, production method, and number of deliverables. We agree on a schedule after reviewing your brief."
+  },
+  {
+    q: "How much does a video cost?",
+    a: "Pricing depends on the creative scope, filming requirements, animation, AI production, post-production, and delivery formats. Share your brief for a tailored quote."
+  },
+  {
+    q: "Can you edit footage we already have?",
+    a: "Yes. We can work with existing footage and add editing, colour grading, motion graphics, titles, sound design, and platform-specific versions."
+  }
+];
+
+/**
+ * SEO Route Metadata
+ */
+export const SEO_METADATA = {
+  "/": {
+    title: "The Velora Studios | Video Production & AI Creative Agency",
+    description: "Bangalore video production agency creating ads, motion graphics, AI videos, product explainers and event films for clients in India, Dubai and Canada."
+  },
+  "/about": {
+    title: "About The Velora Studios | Storytelling & Video Agency",
+    description: "Learn about The Velora Studios, an advertising and video production agency in Bangalore serving clients across Dubai, Canada, and India."
+  },
+  "/services": {
+    title: "Video Production & Creative Services | The Velora Studios",
+    description: "Explore our 8 video production disciplines including commercials, motion graphics, AI product films, and event coverage."
+  },
+  "/work": {
+    title: "Selected Work & Portfolio | The Velora Studios",
+    description: "See the stories we bring to life across commercials, AI videos, product films, social media, and narrative shorts."
+  },
+  "/process": {
+    title: "Our Process | The Velora Studios",
+    description: "A clear 5-step path from brief to final frame: Understand, Develop, Create, Refine, and Deliver."
+  },
+  "/contact": {
+    title: "Start a Project | Contact The Velora Studios",
+    description: "Plan your next campaign, commercial or video with The Velora Studios. Based in Bangalore, serving clients globally."
+  },
+  "/privacy": {
+    title: "Privacy Policy | The Velora Studios",
+    description: "Privacy and data protection policies for The Velora Studios."
+  },
+  "/terms": {
+    title: "Terms of Service | The Velora Studios",
+    description: "Terms and conditions for The Velora Studios."
+  }
+};
+
+
 export const DETAILED_SERVICES = {
   branding: {
     slug: "branding",
@@ -214,34 +552,8 @@ export const DETAILED_SERVICES = {
 /**
  * Studio Core Values (About Page)
  */
-export const STUDIO_VALUES = [
-  {
-    name: "Purpose",
-    description: "Every creative decision should have a reason. We question assumptions to ensure design serves real business goals."
-  },
-  {
-    name: "Clarity",
-    description: "Good communication makes complex ideas easier to understand. We remove decorative clutter to elevate meaning."
-  },
-  {
-    name: "Craft",
-    description: "Details matter, from typography hierarchy and micro-spacing to the final responsive interaction."
-  },
-  {
-    name: "Collaboration",
-    description: "The strongest work comes from clear communication, mutual respect, and shared goals between studio and client."
-  },
-  {
-    name: "Consistency",
-    description: "A brand should feel coherent across every touchpoint, building trust and familiarity with every customer interaction."
-  }
-];
 
-/**
- * Our Work / Case Studies
- * Note on Rule 3: Clearly labeled as Concept Projects & Independent Explorations.
- * No fabricated client quotes, awards, or fake testimonials.
- */
+
 export const CASE_STUDIES = [
   {
     slug: "aura-haute-parfumerie",
@@ -349,6 +661,8 @@ export const CASE_STUDIES = [
  * Insights Articles
  * Real, fact-checked, high-utility guidance without fluff or fake statistics.
  */
+
+
 export const INSIGHTS_ARTICLES = [
   {
     slug: "what-makes-a-brand-identity-consistent",
@@ -487,79 +801,3 @@ export const INSIGHTS_ARTICLES = [
 /**
  * Standard Process Framework (Homepage & Process)
  */
-export const STUDIO_PROCESS_STEPS = [
-  {
-    step: "01",
-    name: "Discover",
-    title: "Understand your business, audience and objectives.",
-    desc: "We begin with focused questions and deep listening to uncover what makes your business unique, who your ideal customers are, and the exact goals your brand or website must achieve."
-  },
-  {
-    step: "02",
-    name: "Define",
-    title: "Establish the direction, priorities and creative strategy.",
-    desc: "We synthesize discovery insights into a clear creative thesis, establishing visual moodboards, site architecture, and milestones before drafting a single final asset."
-  },
-  {
-    step: "03",
-    name: "Create",
-    title: "Develop, refine and bring the right ideas to life.",
-    desc: "We craft your visual identity or digital interface with meticulous attention to typography, proportion, layout, and responsive ergonomics, refining with your collaborative feedback."
-  },
-  {
-    step: "04",
-    name: "Deliver",
-    title: "Test, polish and prepare your work for launch.",
-    desc: "We stress-test performance, cross-browser compatibility, form submissions, and accessibility before launching your platform on Cloudflare Pages global edge network."
-  }
-];
-
-/**
- * SEO Metadata Mapping per Route
- */
-export const SEO_METADATA = {
-  "/": {
-    title: "The Velora Studios | Branding & Web Design",
-    description: "Build a distinctive brand and a purposeful online presence with The Velora Studios. Explore branding, web design and creative services."
-  },
-  "/about": {
-    title: "About The Velora Studios | Our Creative Approach",
-    description: "Discover the philosophy behind The Velora Studios and our approach to branding, website design and creative work."
-  },
-  "/services": {
-    title: "Branding, Web Design & Creative Services | Velora",
-    description: "Explore branding, website design and creative services for startups and established businesses with The Velora Studios."
-  },
-  "/services/branding": {
-    title: "Brand Identity & Branding Services | Velora Studios",
-    description: "Create a cohesive brand identity with thoughtful visual design and a consistent brand system tailored to your business."
-  },
-  "/services/web-design": {
-    title: "Website Design & Development | Velora Studios",
-    description: "Build a responsive, user-focused website that communicates your value and creates a better experience for your customers."
-  },
-  "/services/creative-design": {
-    title: "Creative Design Services | Velora Studios",
-    description: "Develop distinctive creative assets and a consistent visual language for your brand and digital communications."
-  },
-  "/work": {
-    title: "Creative Portfolio & Case Studies | Velora Studios",
-    description: "Explore selected branding, web design and creative projects from The Velora Studios, including project approaches and deliverables."
-  },
-  "/insights": {
-    title: "Branding & Web Design Insights | Velora Studios",
-    description: "Explore practical insights on branding, website design, user experience and creative strategy for businesses."
-  },
-  "/contact": {
-    title: "Contact The Velora Studios | Start a Project",
-    description: "Have a branding, website or creative project in mind? Contact The Velora Studios by email, WhatsApp or project enquiry form."
-  },
-  "/privacy": {
-    title: "Privacy Policy | The Velora Studios",
-    description: "Learn how The Velora Studios collects, uses and protects personal information through its website and enquiry services."
-  },
-  "/terms": {
-    title: "Website Terms | The Velora Studios",
-    description: "Review the applicable terms for using The Velora Studios website and its services."
-  }
-};

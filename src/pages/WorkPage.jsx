@@ -1,97 +1,51 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, Sparkles } from 'lucide-react';
-import { CASE_STUDIES } from '../data/studioData';
+import { ArrowUpRight } from 'lucide-react';
+import WorkSection from '../components/WorkSection';
+import ClientReach from '../components/ClientReach';
 import SEO from '../components/SEO';
 
 export default function WorkPage() {
-  const [activeFilter, setActiveFilter] = useState('All');
-
-  const filters = ['All', 'Brand Strategy & Packaging', 'Website Design & UI Architecture', 'Visual Identity & Editorial Web'];
-
-  const filteredProjects = activeFilter === 'All'
-    ? CASE_STUDIES
-    : CASE_STUDIES.filter((p) => p.category === activeFilter);
-
   return (
     <div className="page-wrapper work-page">
-      <SEO />
+      <SEO
+        customTitle="Our Work & Portfolio | The Velora Studios"
+        customDescription="See the stories we bring to life across commercials, AI videos, product films, social media, and narrative shorts."
+      />
 
       {/* Hero Header */}
       <section className="page-hero-section">
         <div className="container">
-          <span className="editorial-label">CURATED WORK</span>
+          <span className="editorial-label">PORTFOLIO</span>
           <h1 className="page-hero-title font-serif">
-            Thoughtful ideas. Tangible creative work.
+            See the stories we bring to life.
           </h1>
           <p className="page-hero-sub">
-            Every project begins with a different challenge. Explore the thinking, design decisions and creative details behind selected work from The Velora Studios.
+            Explore our work across advertising, product films, motion graphics, event videos, social media, and AI production. Each project brings a different brief, audience, and creative challenge.
           </p>
-
-          {/* Honest Notice */}
-          <div className="concept-transparency-pill" style={{ marginTop: '28px' }}>
-            <Sparkles size={14} />
-            <span>
-              <strong>Concept Projects &amp; Independent Explorations:</strong> These case studies illustrate the studio's aesthetic standard, art direction, and design capabilities. Client-commissioned work will be published upon commercial disclosure authorization.
-            </span>
-          </div>
         </div>
       </section>
 
-      {/* Projects Grid Section */}
-      <section className="section-spacing work-grid-section">
-        <div className="container">
-          {/* Filter Pills */}
-          <div className="work-filter-pills">
-            {filters.map((f) => (
-              <button
-                key={f}
-                type="button"
-                onClick={() => setActiveFilter(f)}
-                className={`filter-btn ${activeFilter === f ? 'active' : ''}`}
-              >
-                {f}
-              </button>
-            ))}
-          </div>
+      {/* Video Portfolio Grid with Filters */}
+      <WorkSection />
 
-          <div className="work-gallery-grid">
-            {filteredProjects.map((project) => (
-              <article key={project.slug} className="work-card-large">
-                <Link to={`/work/${project.slug}`} className="work-card-image-link">
-                  <div className="work-card-image-box">
-                    <img src={project.image} alt={project.title} loading="lazy" />
-                    <span className="work-badge-tag">{project.statusBadge}</span>
-                  </div>
-                </Link>
+      {/* Client Reach */}
+      <ClientReach />
 
-                <div className="work-card-info">
-                  <div className="work-meta-row">
-                    <span className="work-cat font-sans">{project.category}</span>
-                    <span className="work-year font-mono">{project.year}</span>
-                  </div>
-
-                  <h2 className="work-card-title font-serif">
-                    <Link to={`/work/${project.slug}`}>{project.title}</Link>
-                  </h2>
-
-                  <p className="work-card-summary">{project.summary}</p>
-
-                  <div className="work-deliverables-pills">
-                    {project.deliverables.slice(0, 3).map((d, i) => (
-                      <span key={i} className="micro-deliverable-tag">{d}</span>
-                    ))}
-                  </div>
-
-                  <div className="work-read-cta">
-                    <Link to={`/work/${project.slug}`} className="view-case-study-link font-serif">
-                      <span>Explore Case Study</span>
-                      <ArrowUpRight size={14} />
-                    </Link>
-                  </div>
-                </div>
-              </article>
-            ))}
+      {/* Closing CTA */}
+      <section className="section-spacing about-closing-cta">
+        <div className="container text-center">
+          <h2 className="about-cta-headline font-serif">
+            Have a project in mind? Let's start a conversation.
+          </h2>
+          <p className="about-cta-sub">
+            Whether you need a commercial, a product launch film, or an ongoing social media series, we're ready to collaborate.
+          </p>
+          <div style={{ marginTop: '28px' }}>
+            <Link to="/contact" className="btn btn-primary">
+              <span>Start a Project</span>
+              <ArrowUpRight size={15} />
+            </Link>
           </div>
         </div>
       </section>

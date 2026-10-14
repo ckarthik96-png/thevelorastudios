@@ -10,6 +10,7 @@ import WorkPage from './pages/WorkPage';
 import ProjectDetailPage from './pages/ProjectDetailPage';
 import InsightsPage from './pages/InsightsPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
+import ProcessPage from './pages/ProcessPage';
 import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
@@ -32,6 +33,7 @@ export default function App() {
             <Route path="/services/:serviceSlug" element={<IndividualServicePage />} />
             <Route path="/work" element={<WorkPage />} />
             <Route path="/work/:projectSlug" element={<ProjectDetailPage />} />
+            <Route path="/process" element={<ProcessPage />} />
             <Route path="/insights" element={<InsightsPage />} />
             <Route path="/insights/:articleSlug" element={<ArticleDetailPage />} />
             <Route path="/contact" element={<ContactPage />} />

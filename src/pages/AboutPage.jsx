@@ -1,22 +1,30 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
-import { STUDIO_VALUES } from '../data/studioData';
+import { ABOUT_STUDIO, STUDIO_CONFIG } from '../data/studioData';
 import SEO from '../components/SEO';
 import BrandLogo from '../components/BrandLogo';
+import WhyVelora from '../components/WhyVelora';
+import ClientReach from '../components/ClientReach';
 
 export default function AboutPage() {
   return (
     <div className="page-wrapper about-page">
-      <SEO />
+      <SEO
+        customTitle="About The Velora Studios | Storytelling & Video Agency"
+        customDescription="The Velora Studios is a fast-growing advertising and video production agency based in Bangalore, working with clients across India and international markets."
+      />
 
       {/* Hero Header */}
       <section className="page-hero-section">
         <div className="container">
           <span className="editorial-label">ABOUT THE STUDIO</span>
           <h1 className="page-hero-title font-serif">
-            Creativity with purpose. Design with direction.
+            {ABOUT_STUDIO.heading}
           </h1>
+          <p className="page-hero-sub">
+            {STUDIO_CONFIG.tagline}
+          </p>
         </div>
       </section>
 
@@ -25,12 +33,15 @@ export default function AboutPage() {
         <div className="container">
           <div className="about-editorial-grid">
             <div className="about-grid-col-left">
-              <span className="editorial-label">INTRODUCTION</span>
+              <span className="editorial-label">OUR STORY</span>
               <p className="about-lead-paragraph font-serif">
-                The Velora Studios is a branding, web design and creative services studio focused on helping businesses communicate with clarity and distinction.
+                {ABOUT_STUDIO.p1}
               </p>
               <p className="about-text-body">
-                We believe meaningful creative work begins with understanding. By learning about your business, your audience and your ambitions, we develop design solutions that feel considered, communicate your value and support your next stage of growth.
+                {ABOUT_STUDIO.p2}
+              </p>
+              <p className="about-text-body">
+                {ABOUT_STUDIO.p3}
               </p>
             </div>
 
@@ -39,54 +50,45 @@ export default function AboutPage() {
                 <div className="about-card-brand-wrap">
                   <BrandLogo theme="light" size="md" />
                 </div>
-                <span className="editorial-label">OUR PHILOSOPHY</span>
-                <h2 className="philosophy-card-title font-serif">
-                  Design should do more than look good.
-                </h2>
+                <span className="editorial-label">STUDIO PHILOSOPHY</span>
+                <blockquote className="philosophy-card-title font-serif">
+                  "{ABOUT_STUDIO.statement}"
+                </blockquote>
                 <p className="philosophy-card-desc">
-                  It should make your message clearer, your brand more recognisable and your digital presence more useful.
+                  We bridge the gap between creative storytelling and commercial impact, ensuring every visual element serves a clear strategic objective.
                 </p>
-                <p className="philosophy-card-desc">
-                  We combine strategic thinking with creative exploration to help businesses build cohesive identities and engaging online experiences.
-                </p>
+                <div className="about-card-markets">
+                  <span className="font-mono">Global collaborations:</span>
+                  <div className="about-markets-pills">
+                    {STUDIO_CONFIG.clientMarkets.map((m) => (
+                      <span key={m} className="market-pill-item font-mono">{m}</span>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="section-spacing about-values-section">
-        <div className="container">
-          <div className="values-header">
-            <span className="editorial-label">OUR CORE VALUES</span>
-            <h2 className="values-main-title font-serif">Principles that guide every commission.</h2>
-          </div>
+      {/* Why Velora (4 Pillars) */}
+      <WhyVelora />
 
-          <div className="values-list-grid">
-            {STUDIO_VALUES.map((val, idx) => (
-              <div key={val.name} className="value-item-row">
-                <div className="value-num font-mono">0{idx + 1}</div>
-                <div className="value-name font-serif">{val.name}</div>
-                <div className="value-desc">{val.description}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Client Reach */}
+      <ClientReach />
 
       {/* Closing CTA */}
       <section className="section-spacing about-closing-cta">
         <div className="container text-center">
           <h2 className="about-cta-headline font-serif">
-            Have a project in mind? Let's start a conversation.
+            Let’s make your next idea worth watching.
           </h2>
           <p className="about-cta-sub">
-            Whether you are launching a new startup or evolving an established identity, we are here to collaborate.
+            Planning a campaign, launching a product, organising an event, or building your content calendar? Tell us what you have in mind.
           </p>
           <div style={{ marginTop: '28px' }}>
             <Link to="/contact" className="btn btn-primary">
-              <span>Start a Conversation</span>
+              <span>Start a Project</span>
               <ArrowUpRight size={15} />
             </Link>
           </div>
