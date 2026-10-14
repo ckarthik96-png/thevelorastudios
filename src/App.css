@@ -2807,24 +2807,24 @@ main {
 }
 
 .brand-logo-container.size-sm .brand-official-logo-img {
-  height: 38px;
-  max-width: 110px;
+  height: 40px;
+  max-width: 120px;
 }
 
 .brand-logo-container.size-md .brand-official-logo-img {
-  height: 48px;
-  max-width: 140px;
+  height: 52px;
+  max-width: 155px;
 }
 
 .brand-logo-container.size-lg .brand-official-logo-img {
-  height: 64px;
-  max-width: 180px;
+  height: 72px;
+  max-width: 210px;
 }
 
 .brand-logo-container.size-hero .brand-official-logo-img {
-  height: 96px;
-  max-width: 280px;
-  filter: drop-shadow(0 6px 24px rgba(229, 168, 36, 0.25));
+  height: 125px;
+  max-width: 340px;
+  filter: drop-shadow(0 8px 36px rgba(229, 168, 36, 0.35));
 }
 
 .hero-location-line {
