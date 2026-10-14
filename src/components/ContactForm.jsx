@@ -9,7 +9,6 @@ export default function ContactForm() {
     email: '',
     phone: '',
     service: 'Advertising & Brand Films',
-    budget: '$5,000 – $15,000',
     deliveryDate: '',
     projectDescription: '',
     referenceLink: ''
@@ -18,15 +17,6 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const budgetOptions = [
-    'Under $5,000',
-    '$5,000 – $15,000',
-    '$15,000 – $30,000',
-    '$30,000 – $60,000',
-    '$60,000+',
-    'Monthly Content Package'
-  ];
 
   const validate = () => {
     const errs = {};
@@ -78,7 +68,6 @@ export default function ContactForm() {
       email: '',
       phone: '',
       service: 'Advertising & Brand Films',
-      budget: '$5,000 – $15,000',
       deliveryDate: '',
       projectDescription: '',
       referenceLink: ''
@@ -221,26 +210,6 @@ export default function ContactForm() {
                     </select>
                   </div>
 
-                  {/* Estimated Budget */}
-                  <div className="form-field-group">
-                    <label htmlFor="field-budget" className="field-label">
-                      Estimated Budget
-                    </label>
-                    <select
-                      id="field-budget"
-                      name="budget"
-                      value={formData.budget}
-                      onChange={handleChange}
-                      className="form-select"
-                    >
-                      {budgetOptions.map((b) => (
-                        <option key={b} value={b}>{b}</option>
-                      ))}
-                    </select>
-                  </div>
-                </div>
-
-                <div className="form-grid-row">
                   {/* Target Delivery Date */}
                   <div className="form-field-group">
                     <label htmlFor="field-delivery" className="field-label">
@@ -256,22 +225,22 @@ export default function ContactForm() {
                       className="form-input"
                     />
                   </div>
+                </div>
 
-                  {/* Reference Link */}
-                  <div className="form-field-group">
-                    <label htmlFor="field-ref" className="field-label">
-                      Reference Link
-                    </label>
-                    <input
-                      id="field-ref"
-                      type="url"
-                      name="referenceLink"
-                      value={formData.referenceLink}
-                      onChange={handleChange}
-                      placeholder="YouTube, Vimeo, website or moodboard URL"
-                      className="form-input"
-                    />
-                  </div>
+                {/* Reference Link */}
+                <div className="form-field-group">
+                  <label htmlFor="field-ref" className="field-label">
+                    Reference Link
+                  </label>
+                  <input
+                    id="field-ref"
+                    type="url"
+                    name="referenceLink"
+                    value={formData.referenceLink}
+                    onChange={handleChange}
+                    placeholder="YouTube, Vimeo, website or moodboard URL"
+                    className="form-input"
+                  />
                 </div>
 
                 {/* Tell Us About Your Project */}
