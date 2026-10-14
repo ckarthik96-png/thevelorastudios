@@ -4,6 +4,7 @@ import { Globe, MapPin } from 'lucide-react';
 
 const MARKETS = [
   { city: "Dubai", label: "Middle East & GCC Hub", tag: "GMT+4" },
+  { city: "Saudi Arabia", label: "GCC Regional Market", tag: "GMT+3" },
   { city: "Canada", label: "North American Market", tag: "EST / PST" },
   { city: "Bangalore", label: "Studio Headquarters", tag: "IST (GMT+5:30)" },
   { city: "Hyderabad", label: "Media & Tech Corridor", tag: "IST (GMT+5:30)" }
@@ -21,7 +22,7 @@ export default function ClientReach() {
                 Different markets. A shared passion for great stories.
               </h2>
               <p className="reach-desc">
-                We collaborate with clients in Dubai, Canada, Bangalore, and Hyderabad, creating video content for different audiences, industries, and platforms.
+                We collaborate with clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad, creating video content for different audiences, industries, and platforms.
               </p>
               <div className="reach-presence-note font-mono">
                 <MapPin size={16} className="pin-icon" />

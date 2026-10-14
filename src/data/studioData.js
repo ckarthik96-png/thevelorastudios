@@ -10,9 +10,9 @@ export const STUDIO_CONFIG = {
   heroIntro: "VIDEO PRODUCTION · ADVERTISING · AI VISUALS",
   heroHeadline: "Your vision. Made unforgettable.",
   heroDescription: "We create videos that bring brands, products, events, and stories to life. From cinematic advertising and motion graphics to social media content and AI-powered films, The Velora Studios takes your project from the first idea to the final frame.",
-  heroLocations: "Serving clients in Dubai, Canada, Bangalore, and Hyderabad.",
+  heroLocations: "Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad.",
   baseLocation: "Based in Bangalore. Serving clients in India and internationally.",
-  clientMarkets: ["Dubai", "Canada", "Bangalore", "Hyderabad"],
+  clientMarkets: ["Dubai", "Saudi Arabia", "Canada", "Bangalore", "Hyderabad"],
   domain: "thevelorastudios.com",
   canonicalUrl: "https://thevelorastudios.com",
 
@@ -323,7 +323,7 @@ export const WHY_VELORA_PILLARS = [
   {
     number: "04",
     title: "Collaboration across locations",
-    description: "We work with clients in Dubai, Canada, Bangalore, and Hyderabad through clear briefs, shared references, and structured feedback."
+    description: "We work with clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad through clear briefs, shared references, and structured feedback."
   }
 ];
 

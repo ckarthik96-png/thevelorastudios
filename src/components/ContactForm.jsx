@@ -278,6 +278,19 @@ export default function ContactForm() {
                 </div>
               </form>
             )}
+
+            {/* Client Markets */}
+            <div className="contact-markets-strip">
+              <span className="contact-markets-title font-mono">Client Markets</span>
+              <div className="contact-markets-pills">
+                {STUDIO_CONFIG.clientMarkets.map((market) => (
+                  <span key={market} className="contact-market-pill font-sans">
+                    <span className="market-dot" />
+                    <span>{market}</span>
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>
