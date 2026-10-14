@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import { STUDIO_VALUES } from '../data/studioData';
 import SEO from '../components/SEO';
+import BrandLogo from '../components/BrandLogo';
 
 export default function AboutPage() {
   return (
@@ -36,11 +37,7 @@ export default function AboutPage() {
             <div className="about-grid-col-right">
               <div className="about-philosophy-card">
                 <div className="about-card-brand-wrap">
-                  <img
-                    src="/logo-dark.png"
-                    alt="The Velora Studios"
-                    className="about-card-brand-logo"
-                  />
+                  <BrandLogo theme="light" size="md" />
                 </div>
                 <span className="editorial-label">OUR PHILOSOPHY</span>
                 <h2 className="philosophy-card-title font-serif">

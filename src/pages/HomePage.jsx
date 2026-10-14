@@ -4,6 +4,7 @@ import { ArrowUpRight, ArrowRight, Play, Film, Sparkles, CheckCircle2 } from 'lu
 import ServicesSection from '../components/ServicesSection';
 import { CASE_STUDIES, STUDIO_PROCESS_STEPS } from '../data/studioData';
 import SEO from '../components/SEO';
+import BrandLogo from '../components/BrandLogo';
 
 export default function HomePage() {
   return (
@@ -19,11 +20,7 @@ export default function HomePage() {
         <div className="container hero-dark-container">
           {/* Studio Brand Emblem / Crest */}
           <div className="hero-brand-crest-wrap">
-            <img
-              src="/logo.png"
-              alt="The Velora Studios"
-              className="hero-brand-crest-img"
-            />
+            <BrandLogo theme="dark" size="lg" />
           </div>
 
           {/* Service Pill Badge */}

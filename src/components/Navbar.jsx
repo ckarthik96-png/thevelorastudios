@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { STUDIO_CONFIG } from '../data/studioData';
+import BrandLogo from './BrandLogo';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -38,11 +39,7 @@ export default function Navbar() {
       <div className="container nav-container">
         {/* Brand Logo */}
         <Link to="/" className="brand-logo" aria-label="The Velora Studios Home">
-          <img
-            src={isDarkHeader ? "/logo.png" : "/logo-dark.png"}
-            alt="The Velora Studios"
-            className="site-logo-img"
-          />
+          <BrandLogo theme={isDarkHeader ? 'dark' : 'light'} size="md" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -93,13 +90,8 @@ export default function Navbar() {
           <div className="container mobile-drawer-content">
             <div className="mobile-drawer-header">
               <Link to="/" onClick={() => setMobileMenuOpen(false)} aria-label="The Velora Studios Home">
-                <img
-                  src="/logo-dark.png"
-                  alt="The Velora Studios"
-                  className="mobile-drawer-logo"
-                />
+                <BrandLogo theme="light" size="md" />
               </Link>
-              <span className="mobile-eyebrow">BRANDING · DIGITAL · CREATIVE</span>
             </div>
             <ul className="mobile-links-list">
               {navLinks.map((link) => (

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowUp } from 'lucide-react';
 import { STUDIO_CONFIG } from '../data/studioData';
+import BrandLogo from './BrandLogo';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -41,11 +42,7 @@ export default function Footer() {
           {/* Column 1: Studio Identity */}
           <div className="footer-col-brand">
             <Link to="/" className="footer-brand-logo-link" aria-label="The Velora Studios Home">
-              <img
-                src="/logo-dark.png"
-                alt="The Velora Studios"
-                className="footer-logo-img"
-              />
+              <BrandLogo theme="light" size="lg" />
             </Link>
             <p className="footer-tagline">
               {STUDIO_CONFIG.tagline}

@@ -1,13 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" fill="none">
-  <rect width="64" height="64" rx="14" fill="#0c0e12"/>
-  <path d="M16 18L32 48L48 18" stroke="url(#velora-grad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M24 18L32 34L40 18" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
-  <circle cx="32" cy="18" r="2.5" fill="#e0a96d"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
   <defs>
-    <linearGradient id="velora-grad" x1="16" y1="18" x2="48" y2="48" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#f5d061"/>
-      <stop offset="0.5" stop-color="#e0a96d"/>
-      <stop offset="1" stop-color="#9d6bf3"/>
+    <linearGradient id="vGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D78E" />
+      <stop offset="50%" stop-color="#D4A853" />
+      <stop offset="100%" stop-color="#A87F30" />
+    </linearGradient>
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5BF70" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#8A651E" stop-opacity="0.3" />
+    </linearGradient>
+    <linearGradient id="badgeBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15171F" />
+      <stop offset="100%" stop-color="#0B0C10" />
     </linearGradient>
   </defs>
+  <rect x="2" y="2" width="44" height="44" rx="11" fill="url(#badgeBg)" stroke="url(#borderGrad)" stroke-width="1.5" />
+  <path d="M12 16 H19 L23.8 28.5 C24.0 29.0 24.5 29.0 24.7 28.5 L29.5 16 H36.5 L28.2 32.5 H20.3 Z" fill="url(#vGold)" />
 </svg>

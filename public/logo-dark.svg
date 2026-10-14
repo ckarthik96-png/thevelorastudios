@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 60" width="320" height="60">
+  <defs>
+    <linearGradient id="vGoldLogoL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5D78E" />
+      <stop offset="50%" stop-color="#D4A853" />
+      <stop offset="100%" stop-color="#A87F30" />
+    </linearGradient>
+    <linearGradient id="borderGradLogoL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#CFA147" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#8A651E" stop-opacity="0.5" />
+    </linearGradient>
+    <linearGradient id="badgeBgLogoL" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#15171F" />
+      <stop offset="100%" stop-color="#0B0C10" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded V Emblem -->
+  <g transform="translate(6, 8)">
+    <rect x="1" y="1" width="42" height="42" rx="10.5" fill="url(#badgeBgLogoL)" stroke="url(#borderGradLogoL)" stroke-width="1.3" />
+    <path d="M11 15 H17.5 L21.8 26.5 C22.0 27.0 22.5 27.0 22.7 26.5 L27 15 H33.5 L26 30 H18.5 Z" fill="url(#vGoldLogoL)" />
+  </g>
+  <!-- Brand Typography for Light Background -->
+  <text x="64" y="29" fill="#181A18" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" letter-spacing="-0.02em">The Velora Studios</text>
+  <text x="64" y="45" fill="#6A7067" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="9" font-weight="600" letter-spacing="0.14em">CREATIVE &amp; DIGITAL STUDIO</text>
+</svg>
