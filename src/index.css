@@ -35,6 +35,17 @@
   --accent-lime-soft: rgba(183, 202, 118, 0.14);
   --border-dark: rgba(241, 240, 233, 0.12);
 
+  /* Reference A & B — Hero & Video Section Tokens */
+  --bg-hero: #090A0D;
+  --text-warm-white: #F5F3EE;
+  --text-dark-body: #A5A7B0;
+  --accent-gold: #D7AE67;
+  --accent-gold-gradient: linear-gradient(135deg, #F4D089 0%, #D7AE67 55%, #B88B42 100%);
+  --bg-cream: #F5F0D0;
+  --text-ink: #242538;
+  --text-cream-body: #4A4C5E;
+  --border-cream: rgba(36, 37, 56, 0.12);
+
   /* Shared Layout Tokens */
   --radius-xs: 4px;
   --radius-sm: 8px;

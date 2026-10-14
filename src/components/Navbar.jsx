@@ -30,8 +30,11 @@ export default function Navbar() {
     { name: 'Contact', path: '/contact' }
   ];
 
+  const isHomePage = location.pathname === '/';
+  const isDarkHeader = isHomePage && !isScrolled;
+
   return (
-    <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+    <header className={`site-header ${isScrolled ? 'scrolled' : ''} ${isDarkHeader ? 'header-dark-hero' : ''}`}>
       <div className="container nav-container">
         {/* Brand Wordmark */}
         <Link to="/" className="brand-logo" aria-label="The Velora Studios Home">

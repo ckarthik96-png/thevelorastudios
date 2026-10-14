@@ -12,7 +12,7 @@ export const STUDIO_CONFIG = {
   wordmark: "VELORA",
   registeredName: "[BUSINESS_REGISTERED_NAME: The Velora Studios Ltd]",
   tagline: "Thoughtful Ideas. Distinctive Experiences.",
-  positioning: "A creative partner helping startups and established businesses build distinctive brands and purposeful digital experiences.",
+  positioning: "An independent creative, digital & video studio helping ambitious startups and established businesses build distinctive brands, engaging digital experiences and compelling visual stories.",
   domain: "thevelorastudios.com",
   canonicalUrl: "https://thevelorastudios.com",
   
@@ -26,7 +26,7 @@ export const STUDIO_CONFIG = {
   bookingLabel: "Book a 30-min Consultation",
   
   // Studio Locations (Transparent notice: No fake global offices invented)
-  locationNote: "Independent Creative Studio • Collaborating with clients globally",
+  locationNote: "Independent Creative, Digital & Video Studio • Collaborating with clients globally",
   
   // Social Channels
   socials: {
@@ -40,42 +40,56 @@ export const STUDIO_CONFIG = {
 };
 
 /**
- * Section 02 / WHAT WE DO — Homepage Signature Dark Editorial Services
+ * Section 02 / WHAT WE DO — Homepage Signature Dark Editorial Services (7 Disciplines)
  */
 export const HOMEPAGE_SERVICES = [
   {
     number: "01",
     id: "brand-strategy-identity",
     title: "Brand strategy & identity",
-    description: "Build a recognisable brand with a clear point of view, distinctive visuals and a consistent identity.",
+    description: "Build a recognisable brand with clear positioning, distinctive visual identity and a consistent design system.",
     link: "/services/branding"
   },
   {
     number: "02",
     id: "website-design-development",
     title: "Website design & development",
-    description: "Create considered digital experiences that combine strong visual design with intuitive user journeys.",
+    description: "Create engaging digital experiences that combine strong visual design, intuitive navigation and responsive development.",
     link: "/services/web-design"
   },
   {
     number: "03",
-    id: "creative-direction-design",
-    title: "Creative direction & design",
-    description: "Shape a consistent visual language across campaigns, digital assets and brand communications.",
+    id: "film-video-production",
+    title: "Film & video production",
+    description: "Turn ideas into compelling brand films, product stories, promotional videos and event films.",
     link: "/services/creative-design"
   },
   {
     number: "04",
-    id: "digital-experiences",
-    title: "Digital experiences",
-    description: "Turn complex ideas into engaging, responsive and accessible experiences for your audience.",
-    link: "/services/web-design"
+    id: "motion-design-explainers",
+    title: "Motion design & explainers",
+    description: "Bring ideas to life through animation, motion graphics, explainers and visual storytelling.",
+    link: "/services/creative-design"
   },
   {
     number: "05",
-    id: "content-visual-storytelling",
-    title: "Content & visual storytelling",
-    description: "Bring your brand to life through purposeful imagery, compelling layouts and creative storytelling.",
+    id: "ai-assisted-creative-production",
+    title: "AI-assisted creative production",
+    description: "Explore AI-assisted visual concepts, cinematic imagery and creative workflows guided by human art direction and careful editing.",
+    link: "/services/creative-design"
+  },
+  {
+    number: "06",
+    id: "editing-social-content",
+    title: "Editing & social content",
+    description: "Transform footage and creative assets into polished edits, short-form videos and platform-ready content.",
+    link: "/services/creative-design"
+  },
+  {
+    number: "07",
+    id: "creative-direction-campaigns",
+    title: "Creative direction & campaigns",
+    description: "Develop cohesive creative concepts and visual direction across brand campaigns and digital communications.",
     link: "/services/creative-design"
   }
 ];
@@ -163,20 +177,20 @@ export const DETAILED_SERVICES = {
   },
   "creative-design": {
     slug: "creative-design",
-    badge: "03 / ART DIRECTION",
-    navTitle: "Creative Design",
-    title: "Creative Design & Direction",
-    heroHeadline: "Make every brand interaction feel intentional.",
-    heroSummary: "Bring your visual identity into everyday communications through thoughtful design and creative direction. Develop a consistent visual language across the digital and marketing assets relevant to your business.",
-    clientProblem: "Without disciplined creative direction, external campaigns and social collateral quickly become disjointed, diluting brand equity and confusing potential customers.",
-    idealClient: "Marketing leaders and business owners who need ongoing creative stewardship, campaign asset production, or high-tier editorial design.",
+    badge: "03 / VIDEO, MOTION & CREATIVE PRODUCTION",
+    navTitle: "Video & Creative",
+    title: "Video Production, Motion & Creative Direction",
+    heroHeadline: "Films with feeling. Creative work with purpose.",
+    heroSummary: "We turn your ideas into stories people remember. Video, motion and AI — brought together with craft. Develop a consistent visual language across cinematic brand films, digital campaigns, and animated experiences.",
+    clientProblem: "Without captivating video, motion, and disciplined creative direction, brand campaigns quickly become static and forgettable, failing to connect with audiences on modern platforms.",
+    idealClient: "Ambitious startups and established businesses seeking evocative brand films, motion explainers, and high-impact digital campaign assets.",
     deliverables: [
+      "Brand films, product stories & event video production",
+      "Motion design, kinetic typography & explainer animations",
+      "AI-assisted visual concepting & cinematic storyboard exploration",
+      "Post-production, precision color grading & platform-ready social edits",
       "Campaign visual concepts & thematic art direction",
-      "Digital advertising & performance campaign graphics",
-      "Curated social media design systems & templates",
-      "Keynote, pitch decks & investor presentation decks",
-      "Visual content systems & editorial layout guidelines",
-      "Design systems governance & asset libraries"
+      "Presentation master decks & visual content systems"
     ],
     process: [
       { step: "01", name: "Brief & Objectives", desc: "Defining campaign goals, key deliverables, and target audience tone." },

@@ -39,6 +39,48 @@ main {
   box-shadow: 0 4px 20px rgba(32, 35, 31, 0.04);
 }
 
+.site-header.header-dark-hero {
+  background-color: rgba(9, 10, 13, 0.85);
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.site-header.header-dark-hero .brand-name {
+  color: var(--text-warm-white);
+}
+
+.site-header.header-dark-hero .brand-name sup {
+  color: var(--accent-gold);
+}
+
+.site-header.header-dark-hero .nav-link {
+  color: var(--text-dark-body);
+}
+
+.site-header.header-dark-hero .nav-link:hover,
+.site-header.header-dark-hero .nav-link.active {
+  color: #ffffff;
+}
+
+.site-header.header-dark-hero .nav-link.active::after {
+  background-color: var(--accent-gold);
+}
+
+.site-header.header-dark-hero .nav-cta-btn {
+  background: #ffffff;
+  color: #090A0D;
+  border-color: #ffffff;
+}
+
+.site-header.header-dark-hero .nav-cta-btn:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #090A0D;
+}
+
+.site-header.header-dark-hero .mobile-menu-btn {
+  color: #ffffff;
+}
+
 .nav-container {
   display: flex;
   align-items: center;
@@ -211,45 +253,412 @@ main {
 }
 
 /* ==========================================================================
-   3. Homepage: Hero & Philosophy
+   3. REFERENCE A — Dark Homepage Hero Section
    ========================================================================== */
-.hero-editorial-section {
-  padding-top: 100px;
+.hero-dark-showcase-section {
+  position: relative;
+  background-color: var(--bg-hero);
+  color: var(--text-warm-white);
+  padding-top: 130px;
   padding-bottom: 90px;
-  border-bottom: 1px solid var(--border-light);
+  overflow: hidden;
+  text-align: center;
 }
 
-.hero-editorial-container {
+.hero-ambient-glow {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(215, 174, 103, 0.12) 0%, rgba(183, 202, 118, 0.05) 50%, transparent 75%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero-dark-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-editorial-badge {
-  margin-bottom: 24px;
+.hero-pill-badge-wrap {
+  margin-bottom: 28px;
 }
 
-.hero-editorial-title {
-  font-size: clamp(2.8rem, 6.5vw, 5.4rem);
-  line-height: 1.06;
+.hero-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  background: rgba(215, 174, 103, 0.08);
+  border: 1px solid rgba(215, 174, 103, 0.35);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+.pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-gold);
+  box-shadow: 0 0 8px var(--accent-gold);
+  animation: pulse-gold 2s infinite ease-in-out;
+}
+
+@keyframes pulse-gold {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.hero-dark-headline {
+  font-family: var(--font-sans);
+  font-size: clamp(2.5rem, 6.2vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--text-warm-white);
   max-width: 1040px;
-  margin-bottom: 26px;
-  color: var(--text-charcoal);
+  margin: 0 auto;
 }
 
-.hero-editorial-lead {
-  font-size: clamp(1.15rem, 2vw, 1.35rem);
-  line-height: 1.65;
-  color: var(--text-muted);
-  max-width: 720px;
-  margin-bottom: 40px;
+.hero-desktop-break {
+  display: block;
 }
 
-.hero-editorial-actions {
+@media (max-width: 768px) {
+  .hero-desktop-break {
+    display: inline;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F4D089 0%, #D7AE67 55%, #B88B42 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-dark-paragraph {
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.7;
+  color: var(--text-dark-body);
+  max-width: 740px;
+  margin: 30px auto 40px auto;
+}
+
+.hero-dark-actions {
   display: flex;
   align-items: center;
   gap: 16px;
+  justify-content: center;
   flex-wrap: wrap;
+}
+
+.hero-btn-main {
+  background: #ffffff;
+  color: #090A0D;
+  border: 1px solid #ffffff;
+}
+
+.hero-btn-main:hover {
+  background: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: #090A0D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(215, 174, 103, 0.3);
+}
+
+.hero-btn-sub {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-btn-sub:hover {
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.hero-capability-subbar {
+  margin-top: 56px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: #6B707B;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.subbar-bullet {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   3B. REFERENCE B — Editorial Video & Creative Section ("Films with feeling.")
+   ========================================================================== */
+.editorial-video-cream-section {
+  background-color: var(--bg-cream);
+  color: var(--text-ink);
+  padding-top: 110px;
+  padding-bottom: 110px;
+  border-bottom: 1px solid var(--border-cream);
+}
+
+.editorial-video-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-text-content {
+  max-width: 860px;
+  margin-bottom: 48px;
+}
+
+.video-eyebrow-label {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #5A5D70;
+  margin-bottom: 18px;
+}
+
+.films-with-feeling-headline {
+  font-size: clamp(3.2rem, 8vw, 6.4rem);
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  color: var(--text-ink);
+  margin-bottom: 28px;
+}
+
+.films-bold {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  display: block;
+}
+
+.feeling-serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  display: block;
+  color: var(--text-ink);
+  margin-top: -6px;
+}
+
+.video-supporting-copy {
+  font-size: clamp(1.2rem, 2.2vw, 1.45rem);
+  line-height: 1.6;
+  color: var(--text-cream-body);
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
+.video-primary-btn {
+  background-color: var(--text-ink);
+  color: var(--bg-cream);
+  border: 1px solid var(--text-ink);
+}
+
+.video-primary-btn:hover {
+  background-color: #35384e;
+  border-color: #35384e;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(36, 37, 56, 0.18);
+}
+
+/* Cinematic Media Showcase Card */
+.cinematic-showcase-card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.cinematic-frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: clamp(340px, 46vw, 580px);
+  background-color: #1a1b24;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(36, 37, 56, 0.16);
+}
+
+.cinematic-hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.cinematic-showcase-card:hover .cinematic-hero-image {
+  transform: scale(1.03);
+}
+
+.cinema-slate-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.slate-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background-color: rgba(23, 25, 23, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius-full);
+  font-size: 0.74rem;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.rec-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+  animation: pulse-red 1.8s infinite;
+}
+
+@keyframes pulse-red {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.slate-specs {
+  padding: 4px 12px;
+  background-color: rgba(23, 25, 23, 0.75);
+  backdrop-filter: blur(8px);
+  font-size: 0.72rem;
+  color: var(--accent-lime);
+  font-family: var(--font-mono);
+  border-radius: var(--radius-xs);
+}
+
+.cinema-center-action {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.cinema-play-button {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background-color: var(--bg-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transition-base), background-color var(--transition-base);
+}
+
+.cinema-play-button .play-icon {
+  margin-left: 3px;
+  transition: transform var(--transition-fast);
+}
+
+.cinema-play-button:hover {
+  transform: scale(1.1);
+  background-color: #ffffff;
+}
+
+.cinema-play-button:hover .play-icon {
+  transform: scale(1.1);
+}
+
+.cinema-lower-third {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.lower-tagline {
+  font-size: 0.76rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background-color: rgba(23, 25, 23, 0.85);
+  padding: 6px 14px;
+  backdrop-filter: blur(8px);
+}
+
+.lower-timecode {
+  font-size: 0.76rem;
+  background-color: rgba(23, 25, 23, 0.85);
+  padding: 6px 14px;
+  backdrop-filter: blur(8px);
+  color: var(--accent-lime);
+}
+
+.cinema-pillars-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding-top: 10px;
+}
+
+@media (max-width: 800px) {
+  .cinema-pillars-row {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.cinema-pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: 1px solid var(--border-cream);
+}
+
+.cinema-pillar-item .pillar-num {
+  font-size: 0.84rem;
+  color: #7A7C8E;
+  margin-top: 2px;
+}
+
+.cinema-pillar-item .pillar-h {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-ink);
+  margin-bottom: 2px;
+}
+
+.cinema-pillar-item .pillar-p {
+  font-size: 0.88rem;
+  color: var(--text-cream-body);
+  line-height: 1.5;
 }
 
 /* Section 01 / Our Philosophy */

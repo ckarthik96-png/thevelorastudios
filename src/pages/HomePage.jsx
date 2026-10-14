@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, Play, Film, Sparkles, CheckCircle2 } from 'lucide-react';
 import ServicesSection from '../components/ServicesSection';
 import { CASE_STUDIES, STUDIO_PROCESS_STEPS } from '../data/studioData';
 import SEO from '../components/SEO';
@@ -11,30 +11,145 @@ export default function HomePage() {
       <SEO />
 
       {/* =========================================================================
-          HERO SECTION
+          REFERENCE A — DARK HERO SECTION
+          Centered headline, muted gold gradient on "iconic brands", service pill
           ========================================================================= */}
-      <section className="hero-editorial-section">
-        <div className="container hero-editorial-container">
-          <div className="hero-editorial-badge">
-            <span className="editorial-label">BRANDING · DIGITAL · CREATIVE</span>
+      <section className="hero-dark-showcase-section" id="hero">
+        <div className="hero-ambient-glow" />
+        <div className="container hero-dark-container">
+          {/* Service Pill Badge */}
+          <div className="hero-pill-badge-wrap">
+            <div className="hero-pill-badge">
+              <span className="pill-dot" />
+              <span>BRAND STRATEGY • UI/UX ARCHITECTURE • CREATIVE DIRECTION</span>
+            </div>
           </div>
 
-          <h1 className="hero-editorial-title font-serif">
-            Make your next idea impossible to ignore.
+          {/* Main Headline with Muted Gold Gradient */}
+          <h1 className="hero-dark-headline font-sans">
+            Crafting <span className="gold-gradient-text">iconic brands</span> &amp;
+            <br className="hero-desktop-break" />
+            {' '}high-impact digital experiences.
           </h1>
 
-          <p className="hero-editorial-lead">
-            We help ambitious businesses turn ideas into distinctive brands, meaningful digital experiences, and creative work that stands apart.
+          {/* Supporting Paragraph */}
+          <p className="hero-dark-paragraph">
+            The Velora Studios is an independent creative and digital studio helping ambitious startups and established businesses build distinctive brands, engaging digital experiences and compelling visual stories.
           </p>
 
-          <div className="hero-editorial-actions">
-            <Link to="/contact" className="btn btn-primary">
+          {/* Dual Call to Actions */}
+          <div className="hero-dark-actions">
+            <Link to="/contact" className="btn btn-primary hero-btn-main">
               <span>Start a Project</span>
               <ArrowUpRight size={16} />
             </Link>
-            <Link to="/work" className="btn btn-secondary">
+            <Link to="/work" className="btn btn-dark-outline hero-btn-sub">
               <span>Explore Our Work</span>
             </Link>
+          </div>
+
+          {/* Studio Capability Sub-bar */}
+          <div className="hero-capability-subbar">
+            <span>INDEPENDENT CREATIVE, DIGITAL &amp; VIDEO STUDIO</span>
+            <span className="subbar-bullet">•</span>
+            <span>WORLDWIDE CLIENT COLLABORATIONS</span>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          REFERENCE B — EDITORIAL VIDEO & CREATIVE SECTION ("Films with feeling.")
+          Contrasting Pale Cream Background (#F5F0D0), Bold Sans + Expressive Italic Serif
+          ========================================================================= */}
+      <section className="editorial-video-cream-section" id="video-creative">
+        <div className="container">
+          <div className="editorial-video-layout">
+            {/* Top Text Content */}
+            <div className="video-text-content">
+              <span className="video-eyebrow-label">
+                INDEPENDENT VIDEO &amp; CREATIVE STUDIO
+              </span>
+
+              <h2 className="films-with-feeling-headline">
+                <span className="films-bold font-sans">Films with</span>
+                <br />
+                <span className="feeling-serif italic-serif-feeling">feeling.</span>
+              </h2>
+
+              <p className="video-supporting-copy">
+                We turn your ideas into stories people remember. Video, motion and AI — brought together with craft.
+              </p>
+
+              <div className="video-cta-wrap">
+                <Link to="/services/creative-design" className="btn btn-primary video-primary-btn">
+                  <span>Explore Our Creative Services</span>
+                  <ArrowUpRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Art-Directed Cinematic Media Showcase */}
+            <div className="cinematic-showcase-card">
+              <div className="cinematic-frame-wrapper">
+                <img
+                  src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1400&q=80"
+                  alt="Cinematic production studio still"
+                  className="cinematic-hero-image"
+                  loading="lazy"
+                />
+                
+                {/* Cinema Slate Header Overlay */}
+                <div className="cinema-slate-top">
+                  <div className="slate-pill">
+                    <span className="rec-dot" />
+                    <span>THE VELORA STUDIOS SHOWREEL</span>
+                  </div>
+                  <span className="slate-specs">4K UHD • 24 FPS</span>
+                </div>
+
+                {/* Central Play Badge */}
+                <div className="cinema-center-action">
+                  <Link
+                    to="/services/creative-design"
+                    className="cinema-play-button"
+                    aria-label="Explore Video Production Services"
+                  >
+                    <Play size={24} fill="#242538" className="play-icon" />
+                  </Link>
+                </div>
+
+                {/* Cinema Lower Third Overlay */}
+                <div className="cinema-lower-third">
+                  <span className="lower-tagline">BRAND FILMS · MOTION · AI CREATIVE</span>
+                  <span className="lower-timecode font-mono">01:48 / REEL</span>
+                </div>
+              </div>
+
+              {/* Three Cinematic Pillar Highlights */}
+              <div className="cinema-pillars-row">
+                <div className="cinema-pillar-item">
+                  <span className="pillar-num font-mono">01</span>
+                  <div>
+                    <h4 className="pillar-h">Brand Films</h4>
+                    <p className="pillar-p">Cinematic narratives and product stories.</p>
+                  </div>
+                </div>
+                <div className="cinema-pillar-item">
+                  <span className="pillar-num font-mono">02</span>
+                  <div>
+                    <h4 className="pillar-h">Motion Design</h4>
+                    <p className="pillar-p">Dynamic kinetic typography and 3D visual storytelling.</p>
+                  </div>
+                </div>
+                <div className="cinema-pillar-item">
+                  <span className="pillar-num font-mono">03</span>
+                  <div>
+                    <h4 className="pillar-h">AI-Assisted Workflows</h4>
+                    <p className="pillar-p">Concept visualization guided by human art direction.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -53,7 +168,7 @@ export default function HomePage() {
                 Great brands are built with intention.
               </h2>
               <p className="philosophy-body-text">
-                Your brand is more than a logo. It's the impression you leave, the experience you create, and the reason people remember you. We bring strategy, design and creativity together to make every interaction count.
+                Your brand is more than a logo. It's the impression you leave, the experience you create, and the reason people remember you. We bring strategy, design, film and technology together to make every interaction count.
               </p>
             </div>
           </div>
@@ -61,7 +176,7 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          SECTION 02 / WHAT WE DO (THE SIGNATURE EDITORIAL DARK SERVICES SECTION)
+          SECTION 02 / WHAT WE DO (THE 7-DISCIPLINE SIGNATURE EDITORIAL DARK SECTION)
           ========================================================================= */}
       <ServicesSection />
 
@@ -86,12 +201,12 @@ export default function HomePage() {
                 Build a strong foundation from day one.
               </h3>
               <p className="audience-card-text">
-                When launching a venture, early perceptions matter. We help founders clarify their positioning, establish a cohesive visual identity, and build a conversion-focused website that establishes immediate authority.
+                When launching a venture, early perceptions matter. We help founders clarify their positioning, establish a cohesive visual identity, produce compelling launch films, and build a conversion-focused website that establishes immediate authority.
               </p>
               <ul className="audience-checklist">
                 <li><span>Strategic brand positioning</span></li>
                 <li><span>Foundational visual identity</span></li>
-                <li><span>High-impact launch website</span></li>
+                <li><span>Launch film &amp; high-impact website</span></li>
               </ul>
               <Link to="/contact" className="audience-card-link">
                 <span>Start as a Startup</span>
@@ -106,12 +221,12 @@ export default function HomePage() {
                 Evolve your brand with purpose.
               </h3>
               <p className="audience-card-text">
-                For established firms that have outgrown their original branding or whose websites no longer represent their capability, we lead strategic refreshes that protect existing brand equity while modernizing every touchpoint.
+                For established firms that have outgrown their original branding or whose digital presence no longer represents their capability, we lead strategic refreshes that protect existing brand equity while modernizing every touchpoint.
               </p>
               <ul className="audience-checklist">
                 <li><span>Comprehensive identity refresh</span></li>
+                <li><span>Cinematic brand film &amp; campaigns</span></li>
                 <li><span>Modern web re-architecture</span></li>
-                <li><span>Design systems &amp; marketing assets</span></li>
               </ul>
               <Link to="/contact" className="audience-card-link">
                 <span>Evolve Your Brand</span>
@@ -144,7 +259,7 @@ export default function HomePage() {
           {/* Transparent Notice */}
           <div className="concept-transparency-pill">
             <Sparkles size={14} />
-            <span>Concept Projects &amp; Independent Explorations — demonstrating our studio design capabilities before client commission release.</span>
+            <span>Concept Projects &amp; Independent Explorations — demonstrating our studio design, motion, and art direction capabilities before client commission release.</span>
           </div>
 
           {/* Project Cards Grid */}

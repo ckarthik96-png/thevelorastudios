@@ -11,11 +11,11 @@ export default function ServicesSection() {
         <div className="services-editorial-header">
           <span className="editorial-label editorial-label-dark">02 / WHAT WE DO</span>
           <h2 id="services-headline" className="services-editorial-headline font-serif">
-            From a bold idea to a distinctive brand.
+            From a bold idea to a remarkable brand, film or digital experience.
           </h2>
         </div>
 
-        {/* Five Full-Width Horizontal Service Rows */}
+        {/* Seven Full-Width Horizontal Service Rows */}
         <div className="services-rows-container" role="list">
           {HOMEPAGE_SERVICES.map((service) => (
             <div key={service.id} className="service-row-item" role="listitem">
@@ -44,7 +44,7 @@ export default function ServicesSection() {
 
         {/* Section Footer / Subtitle Anchor */}
         <div className="services-editorial-footer">
-          <span className="services-discipline-tagline">STRATEGY · DESIGN · DIGITAL</span>
+          <span className="services-discipline-tagline">STRATEGY · DESIGN · FILM · DIGITAL · AI CREATIVE</span>
           <Link to="/services" className="btn btn-dark-outline services-explore-link">
             <span>Explore All Capabilities</span>
             <ArrowUpRight size={15} />
