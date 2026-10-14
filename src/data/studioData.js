@@ -19,10 +19,12 @@ export const STUDIO_CONFIG = {
   // Contact Information
   email: "hello@thevelorastudios.com",
   displayEmail: "hello@thevelorastudios.com",
-  phone: "+91 80 4123 4567",
-  whatsappNumber: "+91 98765 43210",
-  displayWhatsapp: "+91 98765 43210",
-  whatsappUrl: "https://wa.me/919876543210",
+  phone: "+91 74834 04094",
+  displayPhone: "+91 74834 04094",
+  phoneUrl: "tel:+917483404094",
+  whatsappNumber: "+91 74834 04094",
+  displayWhatsapp: "+91 74834 04094",
+  whatsappUrl: "https://wa.me/917483404094",
   bookingUrl: "https://cal.com/thevelorastudios",
   bookingLabel: "Schedule a Project Call",
 

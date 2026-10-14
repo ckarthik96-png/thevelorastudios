@@ -95,6 +95,11 @@ export default function Footer() {
                 </a>
               </li>
               <li>
+                <a href={STUDIO_CONFIG.phoneUrl} className="footer-direct-link">
+                  Call: {STUDIO_CONFIG.displayPhone}
+                </a>
+              </li>
+              <li>
                 <a href={STUDIO_CONFIG.whatsappUrl} target="_blank" rel="noopener noreferrer" className="footer-direct-link">
                   WhatsApp: {STUDIO_CONFIG.displayWhatsapp}
                 </a>

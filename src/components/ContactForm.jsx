@@ -273,7 +273,7 @@ export default function ContactForm() {
                     <Send size={16} />
                   </button>
                   <span className="form-direct-hint font-mono">
-                    Direct inquiries: <a href={`mailto:${STUDIO_CONFIG.displayEmail}`}>{STUDIO_CONFIG.displayEmail}</a>
+                    Direct inquiries: <a href={`mailto:${STUDIO_CONFIG.displayEmail}`}>{STUDIO_CONFIG.displayEmail}</a> • <a href={STUDIO_CONFIG.phoneUrl}>{STUDIO_CONFIG.displayPhone}</a>
                   </span>
                 </div>
               </form>
