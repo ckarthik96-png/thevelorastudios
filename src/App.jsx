@@ -16,14 +16,16 @@ import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import FloatingContactButtons from './components/FloatingContactButtons';
+import { ThemeProvider } from './context/ThemeContext';
 import './App.css';
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <div className="velora-site-shell">
-        {/* Main Sticky Header */}
-        <Navbar />
+    <ThemeProvider>
+      <BrowserRouter>
+        <div className="velora-site-shell">
+          {/* Main Sticky Header */}
+          <Navbar />
 
         {/* Dynamic Route Content */}
         <main id="main-content" tabIndex={-1}>
@@ -51,5 +53,6 @@ export default function App() {
         <FloatingContactButtons />
       </div>
     </BrowserRouter>
+  </ThemeProvider>
   );
 }

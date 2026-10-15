@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowUpRight, Menu, X } from 'lucide-react';
+import { ArrowUpRight, Menu, X, Sun, Moon } from 'lucide-react';
 import { STUDIO_CONFIG } from '../data/studioData';
 import BrandLogo from './BrandLogo';
+import { useTheme } from '../context/ThemeContext';
 
 export default function Navbar() {
+  const { theme, toggleTheme } = useTheme();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -32,7 +34,8 @@ export default function Navbar() {
   ];
 
   const isHomePage = location.pathname === '/';
-  const isDarkHeader = isHomePage && !isScrolled;
+  const isDark = theme === 'dark';
+  const isDarkHeader = isDark || (isHomePage && !isScrolled);
 
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''} ${isDarkHeader ? 'header-dark-hero' : ''}`}>
@@ -61,11 +64,43 @@ export default function Navbar() {
                 </li>
               );
             })}
+
+            {/* Dark Mode / Light Mode Toggle Button (right next to Contact) */}
+            <li className="nav-theme-item">
+              <button
+                type="button"
+                className="theme-toggle-btn"
+                onClick={toggleTheme}
+                aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+                title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+              >
+                {isDark ? (
+                  <Sun size={17} className="theme-toggle-icon sun-icon" />
+                ) : (
+                  <Moon size={17} className="theme-toggle-icon moon-icon" />
+                )}
+              </button>
+            </li>
           </ul>
         </nav>
 
-        {/* Header CTA Button */}
+        {/* Header CTA Button & Actions */}
         <div className="nav-actions">
+          {/* Mobile Theme Toggle Button */}
+          <button
+            type="button"
+            className="theme-toggle-btn mobile-theme-toggle"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+            title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+          >
+            {isDark ? (
+              <Sun size={17} className="theme-toggle-icon sun-icon" />
+            ) : (
+              <Moon size={17} className="theme-toggle-icon moon-icon" />
+            )}
+          </button>
+
           <Link to="/contact" className="btn btn-primary nav-cta-btn">
             <span>Start a Project</span>
             <ArrowUpRight size={15} />
@@ -90,8 +125,21 @@ export default function Navbar() {
           <div className="container mobile-drawer-content">
             <div className="mobile-drawer-header">
               <Link to="/" onClick={() => setMobileMenuOpen(false)} aria-label="The Velora Studios Home">
-                <BrandLogo theme="light" size="md" />
+                <BrandLogo theme={isDark ? 'dark' : 'light'} size="md" />
               </Link>
+              <button
+                type="button"
+                className="theme-toggle-btn"
+                onClick={toggleTheme}
+                aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+                title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
+              >
+                {isDark ? (
+                  <Sun size={17} className="theme-toggle-icon sun-icon" />
+                ) : (
+                  <Moon size={17} className="theme-toggle-icon moon-icon" />
+                )}
+              </button>
             </div>
             <ul className="mobile-links-list">
               {navLinks.map((link) => (
