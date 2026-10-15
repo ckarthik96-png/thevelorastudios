@@ -15,6 +15,8 @@ export const STUDIO_CONFIG = {
   clientMarkets: ["Dubai", "Saudi Arabia", "Canada", "Bangalore", "Hyderabad"],
   domain: "thevelorastudios.com",
   canonicalUrl: "https://thevelorastudios.com",
+  showreelUrl: "https://cdn.coverr.co/videos/coverr-drone-shot-of-a-cyberpunk-city-at-night-5210/1080p.mp4",
+  showreelPoster: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1400&q=80",
 
   // Contact Information
   email: "hello@thevelorastudios.com",
@@ -205,7 +207,9 @@ export const PORTFOLIO_PROJECTS = [
     filterKey: "Ads & Brand Films",
     year: "2026",
     duration: "02:14",
-    image: "https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200&q=80",
+    image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-a-macro-shot-of-a-luxury-watch-5163/1080p.mp4",
+    videoType: "video/mp4",
     description: "Cinematic commercial blending anamorphic optics with evocative ambient soundscapes to introduce a luxury timepiece brand.",
     scope: ["Concept & Scripting", "Directing & Filming", "Color Grading", "Sound Design"],
     location: "Dubai & Bangalore"
@@ -219,6 +223,8 @@ export const PORTFOLIO_PROJECTS = [
     year: "2026",
     duration: "01:45",
     image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-futuristic-tunnel-with-neon-lights-5612/1080p.mp4",
+    videoType: "video/mp4",
     description: "Exploration of virtual surrealist landscapes and hyper-realistic synthetic product interactions created with generative AI pipelines.",
     scope: ["Generative Visuals", "Art Direction", "Compositing", "Editorial Cut"],
     location: "Global Remote"
@@ -232,6 +238,8 @@ export const PORTFOLIO_PROJECTS = [
     year: "2026",
     duration: "01:20",
     image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-headphones-on-a-stand-3674/1080p.mp4",
+    videoType: "video/mp4",
     description: "Hyper-detailed 3D product showcase highlighting acoustic engineering, magnetic driver mechanics, and aircraft-grade aluminum.",
     scope: ["3D Product Renders", "Kinetic Macro Shots", "Scriptwriting", "Voiceover Direction"],
     location: "Canada"
@@ -245,6 +253,8 @@ export const PORTFOLIO_PROJECTS = [
     year: "2026",
     duration: "00:58",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-abstract-flowing-lines-5374/1080p.mp4",
+    videoType: "video/mp4",
     description: "Dynamic kinetic typography and 2D/3D interface animation explaining fintech data infrastructure and microsecond transaction security.",
     scope: ["2D/3D Animation", "Kinetic Typography", "Sound Effects", "Lottie Assets"],
     location: "Bangalore"
@@ -258,6 +268,8 @@ export const PORTFOLIO_PROJECTS = [
     year: "2026",
     duration: "03:10",
     image: "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-people-at-a-concert-with-stage-lights-5403/1080p.mp4",
+    videoType: "video/mp4",
     description: "Multi-camera live festival coverage, energetic attendee highlight reels, and massive 8K LED stage backdrop visual systems.",
     scope: ["Event Coordination", "Multi-cam Filming", "Same-Day Teaser", "Aftermovie"],
     location: "Hyderabad"
@@ -271,6 +283,8 @@ export const PORTFOLIO_PROJECTS = [
     year: "2026",
     duration: "00:30",
     image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-woman-applying-skincare-product-5179/1080p.mp4",
+    videoType: "video/mp4",
     description: "High-cadence vertical Reels and Shorts optimized for Instagram and TikTok with snappy pacing, textural macro closeups, and hook formulas.",
     scope: ["Vertical 9:16 Video", "Social Strategy", "Motion Captions", "Monthly Content"],
     location: "Dubai"
@@ -284,6 +298,8 @@ export const PORTFOLIO_PROJECTS = [
     year: "2026",
     duration: "14:20",
     image: "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-potter-shaping-a-clay-vase-2615/1080p.mp4",
+    videoType: "video/mp4",
     description: "An emotional narrative short exploring artisanal heritage against modern industrialization, screened at regional film exhibitions.",
     scope: ["Narrative Direction", "Cinematography", "Full Color Grade", "5.1 Surround Mix"],
     location: "Bangalore"
@@ -297,6 +313,8 @@ export const PORTFOLIO_PROJECTS = [
     year: "2026",
     duration: "01:00",
     image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?auto=format&fit=crop&w=1200&q=80",
+    videoUrl: "https://cdn.coverr.co/videos/coverr-cyberpunk-neon-city-5211/1080p.mp4",
+    videoType: "video/mp4",
     description: "Fast-paced TV commercial combining green screen live performers with stylized holographic cyberpunk VFX composites.",
     scope: ["Green Screen Shoot", "Chroma Keying", "CGI Compositing", "Broadcast Mastering"],
     location: "Bangalore & Dubai"

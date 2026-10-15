@@ -1,15 +1,56 @@
-import React, { useState } from 'react';
-import { WORK_FILTERS, PORTFOLIO_PROJECTS } from '../data/studioData';
-import { Play, Film, Sparkles, X, ArrowUpRight, Clock, MapPin } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { WORK_FILTERS, PORTFOLIO_PROJECTS, STUDIO_CONFIG } from '../data/studioData';
+import { Play, X, Clock } from 'lucide-react';
 
 export default function WorkSection() {
   const [activeFilter, setActiveFilter] = useState('All Work');
   const [selectedProject, setSelectedProject] = useState(null);
   const [showreelOpen, setShowreelOpen] = useState(false);
 
+  // Close modals on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setSelectedProject(null);
+        setShowreelOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
+
+  // Lock body scroll while video modal is active
+  useEffect(() => {
+    if (selectedProject || showreelOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [selectedProject, showreelOpen]);
+
   const filteredProjects = activeFilter === 'All Work'
     ? PORTFOLIO_PROJECTS
     : PORTFOLIO_PROJECTS.filter((p) => p.filterKey === activeFilter);
+
+  const handleCardMouseEnter = (e) => {
+    const video = e.currentTarget.querySelector('video');
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay may be restricted by some browser policies; gracefully ignore
+      });
+    }
+  };
+
+  const handleCardMouseLeave = (e) => {
+    const video = e.currentTarget.querySelector('video');
+    if (video) {
+      video.pause();
+      video.currentTime = 0;
+    }
+  };
 
   return (
     <section className="section-spacing work-showcase-section" id="work">
@@ -61,6 +102,8 @@ export default function WorkSection() {
               <div
                 className="project-poster-wrap"
                 onClick={() => setSelectedProject(project)}
+                onMouseEnter={handleCardMouseEnter}
+                onMouseLeave={handleCardMouseLeave}
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => e.key === 'Enter' && setSelectedProject(project)}
@@ -72,6 +115,19 @@ export default function WorkSection() {
                   className="project-poster-img"
                   loading="lazy"
                 />
+
+                {project.videoUrl && (
+                  <video
+                    src={project.videoUrl}
+                    muted
+                    loop
+                    playsInline
+                    preload="none"
+                    className="card-hover-video"
+                    aria-hidden="true"
+                  />
+                )}
+
                 <div className="poster-overlay-scrim">
                   <div className="poster-play-badge">
                     <Play size={20} fill="#090A0D" />
@@ -134,17 +190,17 @@ export default function WorkSection() {
             </button>
 
             <div className="dialog-video-frame">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="modal-stream-preview"
-              />
-              <div className="dialog-playback-overlay">
-                <div className="playback-pulse-circle">
-                  <Play size={32} fill="#090A0D" />
-                </div>
-                <span className="playback-hint font-mono">4K UHD Master • {selectedProject.duration}</span>
-              </div>
+              <video
+                key={selectedProject.id}
+                src={selectedProject.videoUrl}
+                poster={selectedProject.image}
+                controls
+                autoPlay
+                playsInline
+                className="dialog-actual-video"
+              >
+                Your browser does not support HTML5 video streaming.
+              </video>
             </div>
 
             <div className="dialog-meta-panel">
@@ -152,12 +208,19 @@ export default function WorkSection() {
                 <span className="dialog-category font-mono">{selectedProject.category} • {selectedProject.year}</span>
                 <h3 className="dialog-title font-serif">{selectedProject.title}</h3>
                 <p className="dialog-desc">{selectedProject.description}</p>
+                <div className="dialog-scope-tags">
+                  {selectedProject.scope?.map((tag, i) => (
+                    <span key={i} className="scope-tag font-mono">{tag}</span>
+                  ))}
+                </div>
               </div>
               <div className="dialog-meta-right">
                 <span className="dialog-meta-label font-mono">Client Partner</span>
                 <span className="dialog-meta-val">{selectedProject.client}</span>
                 <span className="dialog-meta-label font-mono" style={{ marginTop: '12px' }}>Location</span>
                 <span className="dialog-meta-val">{selectedProject.location}</span>
+                <span className="dialog-meta-label font-mono" style={{ marginTop: '12px' }}>Runtime</span>
+                <span className="dialog-meta-val">{selectedProject.duration}</span>
               </div>
             </div>
           </div>
@@ -178,26 +241,32 @@ export default function WorkSection() {
             </button>
 
             <div className="dialog-video-frame showreel-frame">
-              <img
-                src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1400&q=80"
-                alt="The Velora Studios Official Showreel"
-                className="modal-stream-preview"
-              />
-              <div className="dialog-playback-overlay">
-                <div className="playback-pulse-circle">
-                  <Play size={36} fill="#090A0D" />
-                </div>
-                <span className="playback-hint font-mono">THE VELORA STUDIOS • OFFICIAL SHOWREEL 2026 (4K)</span>
-              </div>
+              <video
+                key="studio-showreel"
+                src={STUDIO_CONFIG.showreelUrl}
+                poster={STUDIO_CONFIG.showreelPoster}
+                controls
+                autoPlay
+                playsInline
+                className="dialog-actual-video"
+              >
+                Your browser does not support HTML5 video streaming.
+              </video>
             </div>
 
             <div className="dialog-meta-panel">
-              <div>
-                <span className="dialog-category font-mono">CREATIVE SHOWREEL</span>
-                <h3 className="dialog-title font-serif">Your vision. Made unforgettable.</h3>
+              <div className="dialog-meta-left">
+                <span className="dialog-category font-mono">OFFICIAL STUDIO SHOWREEL • 2026</span>
+                <h3 className="dialog-title font-serif">{STUDIO_CONFIG.tagline}</h3>
                 <p className="dialog-desc">
                   Featuring commercials, AI product visuals, motion graphics, and cinematic narrative scenes for ambitious brands worldwide.
                 </p>
+              </div>
+              <div className="dialog-meta-right">
+                <span className="dialog-meta-label font-mono">Agency</span>
+                <span className="dialog-meta-val">{STUDIO_CONFIG.name}</span>
+                <span className="dialog-meta-label font-mono" style={{ marginTop: '12px' }}>Format</span>
+                <span className="dialog-meta-val">4K UHD Master (Direct Stream)</span>
               </div>
             </div>
           </div>

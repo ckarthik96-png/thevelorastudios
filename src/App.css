@@ -3020,6 +3020,22 @@ main {
   transform: scale(1.05);
 }
 
+.card-hover-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-poster-wrap:hover .card-hover-video {
+  opacity: 1;
+}
+
 .poster-overlay-scrim {
   position: absolute;
   inset: 0;
@@ -3029,6 +3045,7 @@ main {
   justify-content: center;
   opacity: 0;
   transition: opacity var(--transition-fast);
+  z-index: 2;
 }
 
 .project-poster-wrap:hover .poster-overlay-scrim {
@@ -3066,6 +3083,7 @@ main {
   display: flex;
   align-items: center;
   gap: 5px;
+  z-index: 3;
 }
 
 .poster-category-badge {
@@ -3080,6 +3098,7 @@ main {
   color: var(--accent-gold);
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  z-index: 3;
 }
 
 .project-info-block {
@@ -3183,6 +3202,16 @@ main {
   position: relative;
   aspect-ratio: 16 / 9;
   background: #000;
+  overflow: hidden;
+}
+
+.dialog-actual-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000000;
+  display: block;
+  outline: none;
 }
 
 .modal-stream-preview {
@@ -3221,6 +3250,13 @@ main {
   background: rgba(0, 0, 0, 0.6);
   padding: 6px 14px;
   border-radius: var(--radius-full);
+}
+
+.dialog-scope-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
 }
 
 .dialog-meta-panel {
