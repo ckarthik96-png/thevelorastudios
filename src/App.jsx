@@ -15,6 +15,7 @@ import ContactPage from './pages/ContactPage';
 import PrivacyPage from './pages/PrivacyPage';
 import TermsPage from './pages/TermsPage';
 import NotFoundPage from './pages/NotFoundPage';
+import FloatingContactButtons from './components/FloatingContactButtons';
 import './App.css';
 
 export default function App() {
@@ -45,6 +46,9 @@ export default function App() {
 
         {/* Global Footer */}
         <Footer />
+
+        {/* Floating WhatsApp and Call Action Buttons */}
+        <FloatingContactButtons />
       </div>
     </BrowserRouter>
   );

@@ -441,6 +441,259 @@ main {
   transform: translateY(-2px);
 }
 
+/* ==========================================================================
+   Hero Screenshot Elements: Dual CTA Buttons, Capabilities & 4 Stat Cards
+   ========================================================================== */
+.hero-quote-btn {
+  background: #1E60F2;
+  color: #FFFFFF !important;
+  border: 1px solid #1E60F2;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(30, 96, 242, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.hero-quote-btn:hover {
+  background: #154ecc;
+  border-color: #154ecc;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 96, 242, 0.5);
+}
+
+.hero-whatsapp-btn {
+  background: #25D366;
+  color: #FFFFFF !important;
+  border: 1px solid #25D366;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.hero-whatsapp-btn:hover {
+  background: #1ebe5d;
+  border-color: #1ebe5d;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.5);
+}
+
+.hero-section-divider {
+  width: 100%;
+  max-width: 1040px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 44px 0 36px 0;
+}
+
+.hero-capabilities-block {
+  width: 100%;
+  max-width: 1040px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .hero-capabilities-block {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.capabilities-label {
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #8F9CAE;
+  font-weight: 700;
+}
+
+.capabilities-pills-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+}
+
+@media (max-width: 768px) {
+  .capabilities-pills-row {
+    justify-content: center;
+    gap: 14px 20px;
+  }
+}
+
+.capability-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+.capability-check-icon {
+  color: #3B82F6;
+  flex-shrink: 0;
+}
+
+/* 4 Stat Counter Cards Grid */
+.hero-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  width: 100%;
+  max-width: 1040px;
+  margin-top: 36px;
+}
+
+@media (max-width: 992px) {
+  .hero-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.hero-stat-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(59, 130, 246, 0.4);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+}
+
+.stat-card-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  line-height: 1;
+  color: #3B82F6;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
+}
+
+.stat-card-label {
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: #94A3B8;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   Global Floating Action Buttons (WhatsApp & Call)
+   ========================================================================== */
+.floating-contact-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: center;
+  pointer-events: none;
+}
+
+.floating-btn {
+  pointer-events: auto;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-whatsapp-btn {
+  background: #25D366;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.12);
+  background: #1ebe5d;
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.65);
+}
+
+.floating-phone-btn {
+  background: #1E60F2;
+  box-shadow: 0 8px 24px rgba(30, 96, 242, 0.45);
+}
+
+.floating-phone-btn:hover {
+  transform: scale(1.12);
+  background: #154ecc;
+  box-shadow: 0 12px 32px rgba(30, 96, 242, 0.65);
+}
+
+.floating-tooltip {
+  position: absolute;
+  right: 66px;
+  background: rgba(9, 10, 13, 0.95);
+  color: #FFFFFF;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(8px);
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.floating-btn:hover .floating-tooltip {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 640px) {
+  .floating-contact-dock {
+    bottom: 18px;
+    right: 18px;
+    gap: 10px;
+  }
+  .floating-btn {
+    width: 48px;
+    height: 48px;
+  }
+  .floating-tooltip {
+    display: none;
+  }
+}
+
 .hero-capability-subbar {
   margin-top: 56px;
   display: flex;
