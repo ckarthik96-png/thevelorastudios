@@ -7,8 +7,8 @@ export default function SEO({ customTitle, customDescription }) {
 
   useEffect(() => {
     const meta = SEO_METADATA[location.pathname] || {
-      title: "The Velora Studios | Branding & Web Design",
-      description: "Build a distinctive brand and a purposeful online presence with The Velora Studios."
+      title: "The Velora Studios | Video Production, Advertising, Motion Graphics & AI Agency",
+      description: "We create videos that bring brands, products, events, and stories to life. Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
     };
 
     const titleToSet = customTitle || meta.title;

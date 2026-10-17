@@ -1,6 +1,7 @@
 import React from 'react';
 import logoGold from '../assets/logo.png';
 import logoGoldDarkBg from '../assets/logo-dark.png';
+import { useTheme } from '../context/ThemeContext';
 
 /**
  * The Velora Studios Official Brand Logo
@@ -12,10 +13,21 @@ export default function BrandLogo({
   size = 'md',    // 'sm' | 'md' | 'lg' | 'hero'
   className = ''
 }) {
-  const isDark = theme === 'dark';
+  let contextTheme = 'dark';
+  try {
+    const ctx = useTheme();
+    if (ctx && ctx.theme) {
+      contextTheme = ctx.theme;
+    }
+  } catch (e) {
+    // Graceful fallback if used outside ThemeProvider
+  }
+
+  const effectiveTheme = theme === 'auto' ? contextTheme : theme;
+  const isDark = effectiveTheme === 'dark';
 
   return (
-    <div className={`brand-logo-container size-${size} theme-${theme} ${className}`}>
+    <div className={`brand-logo-container size-${size} theme-${effectiveTheme} ${className}`}>
       <img
         src={isDark ? logoGold : logoGoldDarkBg}
         alt="The Velora Studios"

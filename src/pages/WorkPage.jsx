@@ -27,7 +27,7 @@ export default function WorkPage() {
       </section>
 
       {/* Video Portfolio Grid with Filters */}
-      <WorkSection />
+      <WorkSection hideHeader={true} />
 
       {/* Client Reach */}
       <ClientReach />

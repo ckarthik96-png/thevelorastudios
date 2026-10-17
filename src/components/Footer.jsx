@@ -42,7 +42,7 @@ export default function Footer() {
           {/* Column 1: Studio Identity */}
           <div className="footer-col-brand">
             <Link to="/" className="footer-brand-logo-link" aria-label="The Velora Studios Home">
-              <BrandLogo theme="light" size="lg" />
+              <BrandLogo theme="auto" size="lg" />
             </Link>
             <p className="footer-positioning">
               Video production, advertising, motion graphics, and AI-powered storytelling—from the first idea to the final frame.

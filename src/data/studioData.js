@@ -396,7 +396,7 @@ export const FAQS_DATA = [
   },
   {
     q: "Do you work with international clients?",
-    a: "Yes. We work with clients in Dubai and Canada, alongside clients in Bangalore and Hyderabad. We coordinate briefs, reviews, and delivery remotely where appropriate."
+    a: "Yes. We work with clients in Dubai, Saudi Arabia, and Canada, alongside clients in Bangalore and Hyderabad. We coordinate briefs, reviews, and delivery remotely where appropriate."
   },
   {
     q: "Can you create AI product videos?",
@@ -422,11 +422,11 @@ export const FAQS_DATA = [
 export const SEO_METADATA = {
   "/": {
     title: "The Velora Studios | Video Production & AI Creative Agency",
-    description: "Bangalore video production agency creating ads, motion graphics, AI videos, product explainers and event films for clients in India, Dubai and Canada."
+    description: "Bangalore video production agency creating ads, motion graphics, AI videos, product explainers and event films for clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
   },
   "/about": {
     title: "About The Velora Studios | Storytelling & Video Agency",
-    description: "Learn about The Velora Studios, an advertising and video production agency in Bangalore serving clients across Dubai, Canada, and India."
+    description: "Learn about The Velora Studios, an advertising and video production agency in Bangalore serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
   },
   "/services": {
     title: "Video Production & Creative Services | The Velora Studios",
@@ -442,7 +442,7 @@ export const SEO_METADATA = {
   },
   "/contact": {
     title: "Start a Project | Contact The Velora Studios",
-    description: "Plan your next campaign, commercial or video with The Velora Studios. Based in Bangalore, serving clients globally."
+    description: "Plan your next campaign, commercial or video with The Velora Studios. Based in Bangalore, serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
   },
   "/privacy": {
     title: "Privacy Policy | The Velora Studios",
@@ -456,10 +456,289 @@ export const SEO_METADATA = {
 
 
 export const DETAILED_SERVICES = {
+  // --- 8 Video Production & Creative Disciplines ---
+  "ads-brand-films": {
+    slug: "ads-brand-films",
+    badge: "01 / ADVERTISING & BRAND FILMS",
+    navTitle: "Advertising & Brand Films",
+    title: "Advertising & Brand Films",
+    heroHeadline: "Turn your brand message into a compelling visual story.",
+    heroSummary: "We create commercials, campaign videos, corporate films, and promotional content built around your audience and commercial objectives. From initial script and storyboards to high-end cinematography and final color grading.",
+    clientProblem: "Generic corporate videos and template advertisements often fail to capture attention or evoke emotion, getting skipped within the first 3 seconds and leaving zero brand recall.",
+    idealClient: "Consumer brands, B2B enterprises, tech leaders, and agencies looking for broadcast-quality commercials and flagship brand stories that convert.",
+    deliverables: [
+      "Creative concept development, scripting & narrative treatment",
+      "Storyboard design, moodboards & shot listing",
+      "Full on-location & studio cinematic filming (4K/6K cinema rigs)",
+      "Professional casting, voiceover artist curation & location scouting",
+      "High-end editorial cut, sound design & licensed soundtrack scoring",
+      "DaVinci Resolve color grading & multi-format delivery (16:9, 9:16, 1:1, 4:5)"
+    ],
+    process: [
+      { step: "01", name: "Concept & Script", desc: "Uncovering your core message, audience drivers, and drafting memorable commercial scripts." },
+      { step: "02", name: "Pre-Production", desc: "Shot lists, storyboards, location scouting, casting, crew and equipment preparation." },
+      { step: "03", name: "Production", desc: "Directing and filming on cinema-grade cameras, lighting, and audio capture." },
+      { step: "04", name: "Post & Mastering", desc: "Editorial assembly, sound mix, precision color grade, and multi-platform exports." }
+    ],
+    faqs: [
+      {
+        q: "Can you handle casting and voiceovers?",
+        a: "Yes. We source and manage talent, voiceover artists across multiple languages and accents, and handle all licensing."
+      },
+      {
+        q: "What turnaround time should we expect for a brand film?",
+        a: "A broadcast commercial or brand film typically takes 2 to 4 weeks from approved script to final master delivery."
+      },
+      {
+        q: "Do you deliver platform-specific cuts?",
+        a: "Yes. We deliver master 16:9 widescreen cuts along with 9:16 vertical cuts for Instagram Reels and TikTok, and 15s/30s/60s cutdowns."
+      }
+    ]
+  },
+  "motion-graphics": {
+    slug: "motion-graphics",
+    badge: "02 / MOTION DESIGN & ANIMATION",
+    navTitle: "Motion Graphics & Animation",
+    title: "Motion Graphics & 2D/3D Animation",
+    heroHeadline: "Make complex ideas clear, engaging, and visually unforgettable.",
+    heroSummary: "Animated typography, 2D/3D visual effects, and kinetic storytelling designed to explain features, energize campaigns, and simplify complex data.",
+    clientProblem: "Abstract products, software interfaces, or complex services are hard to film live, leading to confusing presentations that lose customer interest.",
+    idealClient: "SaaS companies, fintechs, modern brands, and educators wanting to explain products or energize brand touchpoints.",
+    deliverables: [
+      "2D vector animation & bespoke character illustration",
+      "3D motion design & realistic product modeling",
+      "Kinetic typography & dynamic title sequences",
+      "Logo animation & digital brand motion systems",
+      "Infographics & animated data visualization",
+      "Lottie JSON assets for web apps & mobile interfaces"
+    ],
+    process: [
+      { step: "01", name: "Style Frames", desc: "Developing custom design illustrations and color palettes before animation." },
+      { step: "02", name: "Storyboarding", desc: "Mapping each scene's transitions, pacing, and visual choreography." },
+      { step: "03", name: "Animation", desc: "Choreographing motion in After Effects, Cinema 4D, and Blender." },
+      { step: "04", name: "Sound & Delivery", desc: "Layering custom foley sound design, voiceover sync, and master renders." }
+    ],
+    faqs: [
+      {
+        q: "Do you provide web-ready animation formats like Lottie?",
+        a: "Yes. We export lightweight vector Lottie JSON and WebM files for fast website integration alongside standard MP4/ProRes."
+      },
+      {
+        q: "Can you animate our existing logo and brand elements?",
+        a: "Yes. We take your vector logo files and create cohesive motion idents, intros, and lower-thirds."
+      }
+    ]
+  },
+  "social-media": {
+    slug: "social-media",
+    badge: "03 / SOCIAL MEDIA CONTENT",
+    navTitle: "Social Media Content",
+    title: "Social Media Video & Retainer Packages",
+    heroHeadline: "Keep your brand active with high-converting, platform-ready creative.",
+    heroSummary: "High-tempo Reels, TikToks, YouTube Shorts, and animated social posts engineered to capture feeds, build engagement, and drive steady audience growth.",
+    clientProblem: "Consistent video creation is time-consuming and expensive to manage in-house, resulting in sporadic posting, stale feeds, and dropping algorithmic reach.",
+    idealClient: "Direct-to-consumer brands, lifestyle companies, influencers, and businesses needing a dependable monthly cadence of polished vertical content.",
+    deliverables: [
+      "Monthly vertical video packages (8, 16, or 30 videos/month)",
+      "Trending audio research & high-retention hook formulas",
+      "Dynamic on-screen subtitles, stickers & motion graphics",
+      "Product unboxings, tutorials & behind-the-scenes edits",
+      "Repurposed long-form podcasts/webinars into bite-sized clips",
+      "Performance-optimized thumbnail designs & caption drafts"
+    ],
+    process: [
+      { step: "01", name: "Content Strategy", desc: "Aligning with your content calendar, monthly promotions, and audience pillars." },
+      { step: "02", name: "Production or Sourcing", desc: "Filming batch content shoots or receiving your raw phone footage." },
+      { step: "03", name: "Fast-Paced Editing", desc: "Adding hooks, rapid cuts, kinetic text overlays, and sound cues." },
+      { step: "04", name: "Scheduled Delivery", desc: "Delivering weekly batches ready to schedule with zero friction." }
+    ],
+    faqs: [
+      {
+        q: "How do monthly retainers work?",
+        a: "We agree on a set volume of videos per month (e.g. 12 Reels), establish a recurring shoot or file transfer schedule, and deliver on an agreed weekly calendar."
+      },
+      {
+        q: "Can you edit raw smartphone footage our team records?",
+        a: "Absolutely. Many clients film raw behind-the-scenes or founder talks on their phones, and our editors turn them into viral-ready pieces."
+      }
+    ]
+  },
+  "ai-videos": {
+    slug: "ai-videos",
+    badge: "04 / AI VIDEOS & VISUALS",
+    navTitle: "AI Videos & AI Product Films",
+    title: "AI Videos & AI Product Films",
+    heroHeadline: "Explore bold creative possibilities with AI-powered video production.",
+    heroSummary: "Merging generative AI imagery, neural video generation, and precision art direction to produce surreal environments, concept films, and product visuals at unprecedented velocity.",
+    clientProblem: "Traditional filming of impossible locations, sci-fi concepts, or dozens of product variants can cost tens of thousands of dollars and take months of studio prep.",
+    idealClient: "Visionary startups, luxury brands, agencies, and creators seeking avant-garde visuals, futuristic concepts, or rapid high-concept commercial iterations.",
+    deliverables: [
+      "Generative AI world-building & cinematic scenes",
+      "Synthetic product placement in photorealistic environments",
+      "AI-assisted storytelling, animatics & storyboard generation",
+      "Neural upscaling to 4K UHD with temporal stability",
+      "Hybrid workflows combining real live-action talent with AI backgrounds",
+      "Custom AI sound effects & atmospheric synthesized scoring"
+    ],
+    process: [
+      { step: "01", name: "Art Direction", desc: "Designing bespoke prompt architectures, LoRAs, and visual references." },
+      { step: "02", name: "Generative Pipeline", desc: "Generating high-fidelity frames and video interpolations using state-of-the-art diffusion models." },
+      { step: "03", name: "Compositing", desc: "Refining consistency, eradicating artifacts, and compositing with motion graphics." },
+      { step: "04", name: "Cinematic Grade", desc: "Color balancing, cinematic grain emulation, and audio mastering." }
+    ],
+    faqs: [
+      {
+        q: "Are AI videos commercially cleared?",
+        a: "Yes. We use licensed generative platforms and workflows that permit full commercial and advertising usage rights."
+      },
+      {
+        q: "How realistic do AI product videos look?",
+        a: "Our hybrid approach blends genuine 3D/CAD product models with AI-generated photorealistic environments, ensuring your product remains 100% faithful."
+      }
+    ]
+  },
+  "product-explainers": {
+    slug: "product-explainers",
+    badge: "05 / PRODUCT & EXPLAINER FILMS",
+    navTitle: "Product Videos & Explainers",
+    title: "Product Videos & Technical Explainers",
+    heroHeadline: "Show what your product does, how it works, and why it matters.",
+    heroSummary: "Clarity converts. We create product launch films, interactive app walkthroughs, and technical 3D explainers that turn complex features into crystal-clear value propositions.",
+    clientProblem: "Prospective buyers don't read long feature documentation. If they can't understand what your product solves in 60 seconds, they bounce to a competitor.",
+    idealClient: "Hardware manufacturers, SaaS platforms, consumer electronics, and medical device companies launching or scaling their solutions.",
+    deliverables: [
+      "Product launch teaser & hero announcement films",
+      "3D CAD product exploded views & feature spotlights",
+      "Software UI walkthroughs & animated feature tours",
+      "Customer onboarding & how-it-works video tutorials",
+      "Scriptwriting focused on buyer pain points & benefits",
+      "Multi-language voiceover adaptation"
+    ],
+    process: [
+      { step: "01", name: "Technical Teardown", desc: "Understanding your product architecture, user friction points, and hero features." },
+      { step: "02", name: "Script & Flow", desc: "Writing a tight, jargon-free script that highlights customer value." },
+      { step: "03", name: "3D & Screen Capture", desc: "Modeling the device or animating sleek stylized UI screens." },
+      { step: "04", name: "Polish & Delivery", desc: "Syncing sound effects to clicks, transitions, and product highlights." }
+    ],
+    faqs: [
+      {
+        q: "Can you work from our CAD or 3D files?",
+        a: "Yes. We can import STEP, OBJ, FBX, and other CAD formats into our 3D pipeline for photo-real rendering."
+      },
+      {
+        q: "What is the recommended length for an explainer video?",
+        a: "For homepage and ad explainers, 60 to 90 seconds delivers the highest engagement and conversion."
+      }
+    ]
+  },
+  "event-production": {
+    slug: "event-production",
+    badge: "06 / EVENT PRODUCTION & COVERAGE",
+    navTitle: "Event Production & Coverage",
+    title: "Event Production, Coverage & Visuals",
+    heroHeadline: "Capture the energy of your event from planning to the final recap.",
+    heroSummary: "End-to-end event production support: multi-camera on-site filming, live LED backdrop visuals, same-day social teasers, and cinematic aftermovies that extend your event's lifetime value.",
+    clientProblem: "Events represent major financial investments. Without dynamic video coverage, the excitement evaporates the moment attendees leave the hall.",
+    idealClient: "Conference organizers, corporate summits, festival producers, brand activations, and trade show exhibitors across India, the GCC, and North America.",
+    deliverables: [
+      "Multi-camera 4K live event coverage & gimbal operators",
+      "Cinematic recap aftermovies & highlight films",
+      "Same-day social media teaser reels for real-time buzz",
+      "Speaker keynotes, panel recordings & sponsor video reels",
+      "Custom animated LED stage loops, intros & speaker walk-on visuals",
+      "Audio recording & multi-track master mixing"
+    ],
+    process: [
+      { step: "01", name: "Production Run-Sheet", desc: "Coordinating with event managers, AV teams, and schedule milestones." },
+      { step: "02", name: "On-Site Deployment", desc: "Multi-camera crew capturing keynotes, attendee reactions, and ambient atmosphere." },
+      { step: "03", name: "Rapid Turnaround", desc: "On-site editors cutting same-day reels for social distribution." },
+      { step: "04", name: "Master Delivery", desc: "Full keynote archives and the flagship cinematic aftermovie." }
+    ],
+    faqs: [
+      {
+        q: "Can you provide same-day highlight reels while the event is ongoing?",
+        a: "Yes. We often deploy a dedicated on-site editor who cuts 30-second teaser reels for Instagram and LinkedIn while the conference is in progress."
+      },
+      {
+        q: "Do you travel internationally for events?",
+        a: "Yes. Our crews travel to Dubai, Riyadh, Toronto, and across India for major events."
+      }
+    ]
+  },
+  "green-screen-vfx": {
+    slug: "green-screen-vfx",
+    badge: "07 / GREEN SCREEN & VFX",
+    navTitle: "Green Screen & Visual Effects",
+    title: "Green Screen Filming & Visual Effects",
+    heroHeadline: "Bring presenters, performances, and imagined worlds together seamlessly.",
+    heroSummary: "Studio chroma key production, background replacement, clean plate compositing, and visual effects that place talent in any environment imaginable with photographic realism.",
+    clientProblem: "Shooting on multiple global locations is cost-prohibitive, and poor green screen keying results in unnatural edges, spill colors, and cheap-looking videos.",
+    idealClient: "Corporate executives, training academies, broadcast commercials, and creative directors needing seamless presenter environments without travel.",
+    deliverables: [
+      "Studio green screen filming with teleprompter facilities",
+      "Precision chroma key extraction with zero green edge spill",
+      "Virtual 3D studio set design & camera tracking",
+      "Background replacement with photorealistic environments",
+      "Compositing, rotoscoping & wire removal",
+      "VFX cleanups & digital screen replacements"
+    ],
+    process: [
+      { step: "01", name: "Lighting & Key Setup", desc: "Diffused, even illumination calibrated for clean key extraction." },
+      { step: "02", name: "Talent Filming", desc: "Directing presenters with teleprompters for confident delivery." },
+      { step: "03", name: "Chroma Key & Tracking", desc: "Camera tracking and background match-moving in post." },
+      { step: "04", name: "Composite & Grade", desc: "Matching subject shadows and lighting to the virtual environment." }
+    ],
+    faqs: [
+      {
+        q: "Do you have teleprompters for presenters who aren't professional actors?",
+        a: "Yes. We provide high-brightness studio teleprompters and vocal coaching so any founder or team member looks natural on camera."
+      },
+      {
+        q: "Can you match lighting to our existing office or brand color scheme?",
+        a: "Yes. We pre-light the talent specifically to match the direction, color temperature, and ambiance of the virtual environment."
+      }
+    ]
+  },
+  "films-post-production": {
+    slug: "films-post-production",
+    badge: "08 / FILMS & POST-PRODUCTION",
+    navTitle: "Movies, Shorts & Post-Production",
+    title: "Movies, Short Films & Post-Production",
+    heroHeadline: "Give your story a cinematic finish with craft, pacing, and emotional depth.",
+    heroSummary: "Comprehensive post-production and narrative filmmaking. We handle narrative structure, pacing, DaVinci Resolve color grading, sound design, dialogue cleanup, and 5.1 surround mastering.",
+    clientProblem: "Raw footage without disciplined editing and sound design feels flat. 80% of cinematic emotion lives in the soundscapes, pacing, and color palette.",
+    idealClient: "Independent filmmakers, streaming producers, commercial directors, and agencies seeking high-craft editorial and post-production supervision.",
+    deliverables: [
+      "Full narrative offline & online video editing",
+      "DaVinci Resolve ACES color grading & film emulation",
+      "Cinematic sound design, foley & 5.1 surround sound mixing",
+      "Dialogue isolation, noise reduction & vocal sweetening",
+      "Theatrical trailers, teasers & festival cutdowns",
+      "DCP theatrical mastering, broadcast QC & streaming compliance"
+    ],
+    process: [
+      { step: "01", name: "Assembly & Rough Cut", desc: "Organizing footage, selecting best takes, and building narrative rhythm." },
+      { step: "02", name: "Fine Cut & Lock", desc: "Tightening micro-edits, scene transitions, and locking the picture." },
+      { step: "03", name: "Color & Audio", desc: "Color pass on calibrated reference monitors and multi-track audio mix." },
+      { step: "04", name: "Master QC & Delivery", desc: "Exporting DCP, ProRes 4444, and web-ready exhibition packages." }
+    ],
+    faqs: [
+      {
+        q: "Can you work on existing footage shot by another crew?",
+        a: "Yes. We frequently take raw drives shot worldwide and take charge of the entire post-production pipeline."
+      },
+      {
+        q: "What software tools do you use for post-production?",
+        a: "We work in DaVinci Resolve Studio, Premiere Pro, After Effects, Pro Tools, and Blender for our offline, color, audio, and visual effects workflows."
+      }
+    ]
+  },
+
+  // --- Retained Service Aliases for Backwards Compatibility ---
   branding: {
     slug: "branding",
-    badge: "01 / BRAND IDENTITY",
-    navTitle: "Branding",
+    badge: "BRAND IDENTITY & STRATEGY",
+    navTitle: "Brand Strategy & Identity",
     title: "Brand Strategy & Visual Identity",
     heroHeadline: "Build a brand people recognise and remember.",
     heroSummary: "Develop a cohesive identity that communicates what your business stands for. From the initial creative direction to the final visual system, create a brand foundation designed to remain consistent across your customer touchpoints.",
@@ -496,8 +775,8 @@ export const DETAILED_SERVICES = {
   },
   "web-design": {
     slug: "web-design",
-    badge: "02 / DIGITAL EXPERIENCE",
-    navTitle: "Website Design",
+    badge: "DIGITAL EXPERIENCE & WEB",
+    navTitle: "Website Design & Development",
     title: "Website Design & Development",
     heroHeadline: "Websites that bring your brand to life.",
     heroSummary: "Create a considered online experience that helps visitors understand your business, explore your services and take the next step. We bring together visual design, usability and responsive development to create websites aligned with your objectives.",
@@ -535,8 +814,8 @@ export const DETAILED_SERVICES = {
   },
   "creative-design": {
     slug: "creative-design",
-    badge: "03 / VIDEO, MOTION & CREATIVE PRODUCTION",
-    navTitle: "Video & Creative",
+    badge: "VIDEO, MOTION & CREATIVE PRODUCTION",
+    navTitle: "Video & Creative Production",
     title: "Video Production, Motion & Creative Direction",
     heroHeadline: "Films with feeling. Creative work with purpose.",
     heroSummary: "We turn your ideas into stories people remember. Video, motion and AI — brought together with craft. Develop a consistent visual language across cinematic brand films, digital campaigns, and animated experiences.",
@@ -570,10 +849,8 @@ export const DETAILED_SERVICES = {
 };
 
 /**
- * Studio Core Values (About Page)
+ * Studio Core Values & Selected Case Studies
  */
-
-
 export const CASE_STUDIES = [
   {
     slug: "aura-haute-parfumerie",

@@ -19,7 +19,10 @@ export default function IndividualServicePage() {
 
   return (
     <div className="page-wrapper service-detail-page">
-      <SEO />
+      <SEO
+        customTitle={`${service.title} | The Velora Studios`}
+        customDescription={service.heroSummary}
+      />
 
       {/* Breadcrumb Navigation */}
       <section className="service-hero-section">

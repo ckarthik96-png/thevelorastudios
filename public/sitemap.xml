@@ -1,32 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Core Pages -->
   <url>
     <loc>https://thevelorastudios.com/</loc>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://thevelorastudios.com/about</loc>
-    <priority>0.80</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://thevelorastudios.com/services</loc>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://thevelorastudios.com/services/branding</loc>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thevelorastudios.com/services/web-design</loc>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://thevelorastudios.com/services/creative-design</loc>
-    <priority>0.85</priority>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://thevelorastudios.com/work</loc>
-    <priority>0.85</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/process</loc>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://thevelorastudios.com/insights</loc>
@@ -36,6 +29,134 @@
     <loc>https://thevelorastudios.com/contact</loc>
     <priority>0.90</priority>
   </url>
+
+  <!-- Video Production Services -->
+  <url>
+    <loc>https://thevelorastudios.com/services/ads-brand-films</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/motion-graphics</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/social-media</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/ai-videos</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/product-explainers</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/event-production</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/green-screen-vfx</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/films-post-production</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <!-- Legacy Service Aliases -->
+  <url>
+    <loc>https://thevelorastudios.com/services/branding</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/web-design</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/creative-design</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Video Productions & Work Items -->
+  <url>
+    <loc>https://thevelorastudios.com/work/lumina-brand-film</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/aurora-ai-cosmos</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/apex-product-film</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/strata-kinetic-identity</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/synapse-global-summit</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/velvet-glow-social</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/the-last-artisan</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/cyber-pulse-commercial</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <!-- Case Studies -->
+  <url>
+    <loc>https://thevelorastudios.com/work/aura-haute-parfumerie</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/kinetix-robotics</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/solstice-atelier</loc>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/vesper-wealth</loc>
+    <priority>0.75</priority>
+  </url>
+
+  <!-- Insights Articles -->
+  <url>
+    <loc>https://thevelorastudios.com/insights/what-makes-a-brand-identity-consistent</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/insights/what-should-a-startup-include-in-its-first-website</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/insights/when-is-it-time-to-refresh-your-business-website</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/insights/how-to-prepare-for-a-branding-project</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/insights/website-design-decisions-that-improve-user-experience</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/insights/brand-guidelines-what-every-business-should-know</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- Legal Pages -->
   <url>
     <loc>https://thevelorastudios.com/privacy</loc>
     <priority>0.30</priority>

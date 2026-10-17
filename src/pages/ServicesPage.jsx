@@ -28,7 +28,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid (8 Disciplines) */}
-      <ServicesSection />
+      <ServicesSection hideHeader={true} />
 
       {/* Why Velora (4 Pillars) */}
       <WhyVelora />

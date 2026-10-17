@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { WORK_FILTERS, PORTFOLIO_PROJECTS, STUDIO_CONFIG } from '../data/studioData';
-import { Play, X, Clock } from 'lucide-react';
+import { Play, X, Clock, ArrowUpRight } from 'lucide-react';
 
-export default function WorkSection() {
+export default function WorkSection({ hideHeader = false }) {
   const [activeFilter, setActiveFilter] = useState('All Work');
   const [selectedProject, setSelectedProject] = useState(null);
   const [showreelOpen, setShowreelOpen] = useState(false);
@@ -56,28 +57,30 @@ export default function WorkSection() {
     <section className="section-spacing work-showcase-section" id="work">
       <div className="container">
         {/* Section Header */}
-        <div className="section-header text-center">
-          <span className="editorial-label">OUR WORK</span>
-          <h2 className="section-title font-serif">
-            See the stories we bring to life.
-          </h2>
-          <p className="section-subtitle">
-            Explore our work across advertising, product films, motion graphics, event videos, social media, and AI production. Each project brings a different brief, audience, and creative challenge.
-          </p>
+        {!hideHeader && (
+          <div className="section-header text-center">
+            <span className="editorial-label">OUR WORK</span>
+            <h2 className="section-title font-serif">
+              See the stories we bring to life.
+            </h2>
+            <p className="section-subtitle">
+              Explore our work across advertising, product films, motion graphics, event videos, social media, and AI production. Each project brings a different brief, audience, and creative challenge.
+            </p>
 
-          {/* Showreel Action Button */}
-          <div className="showreel-cta-wrap">
-            <button
-              type="button"
-              className="btn btn-primary showreel-main-btn"
-              onClick={() => setShowreelOpen(true)}
-              aria-label="Watch Our Showreel"
-            >
-              <Play size={16} fill="currentColor" />
-              <span>Watch Our Showreel</span>
-            </button>
+            {/* Showreel Action Button */}
+            <div className="showreel-cta-wrap">
+              <button
+                type="button"
+                className="btn btn-primary showreel-main-btn"
+                onClick={() => setShowreelOpen(true)}
+                aria-label="Watch Our Showreel"
+              >
+                <Play size={16} fill="currentColor" />
+                <span>Watch Our Showreel</span>
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Portfolio Filters */}
         <div className="portfolio-filter-bar" role="tablist" aria-label="Work category filters">
@@ -148,7 +151,11 @@ export default function WorkSection() {
                 <div className="project-header-row">
                   <div>
                     <span className="project-client-name font-mono">{project.client} • {project.year}</span>
-                    <h3 className="project-title-heading font-serif">{project.title}</h3>
+                    <h3 className="project-title-heading font-serif">
+                      <Link to={`/work/${project.id}`} className="project-title-link">
+                        {project.title}
+                      </Link>
+                    </h3>
                   </div>
                 </div>
 
@@ -167,8 +174,15 @@ export default function WorkSection() {
                     onClick={() => setSelectedProject(project)}
                   >
                     <Play size={14} fill="currentColor" />
-                    <span>Watch Project</span>
+                    <span>Watch Video</span>
                   </button>
+                  <Link
+                    to={`/work/${project.id}`}
+                    className="service-action-link project-case-link font-sans"
+                  >
+                    <span>View Story</span>
+                    <ArrowUpRight size={14} />
+                  </Link>
                 </div>
               </div>
             </div>
