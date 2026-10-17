@@ -7,11 +7,18 @@ import SEO from '../components/SEO';
 export default function ProjectDetailPage() {
   const { projectSlug } = useParams();
 
+  const ALIAS_MAP = {
+    'aurora-ai-cosmos': 'ai-cinematic-explainer',
+    'apex-product-film': 'ktm-duke-3d-film',
+    'strata-kinetic-identity': 'dubai-ai-festival'
+  };
+  const effectiveSlug = ALIAS_MAP[projectSlug] || projectSlug;
+
   // 1. Look up in PORTFOLIO_PROJECTS (video productions)
-  const portfolioItem = PORTFOLIO_PROJECTS.find((p) => p.id === projectSlug);
+  const portfolioItem = PORTFOLIO_PROJECTS.find((p) => p.id === effectiveSlug);
 
   // 2. Fallback to CASE_STUDIES
-  const caseStudyItem = CASE_STUDIES.find((p) => p.slug === projectSlug);
+  const caseStudyItem = CASE_STUDIES.find((p) => p.slug === effectiveSlug);
 
   if (!portfolioItem && !caseStudyItem) {
     return <Navigate to="/work" replace />;
@@ -21,8 +28,8 @@ export default function ProjectDetailPage() {
   const project = portfolioItem || caseStudyItem;
 
   const relatedItems = isVideo
-    ? PORTFOLIO_PROJECTS.filter((p) => p.id !== projectSlug).slice(0, 3)
-    : CASE_STUDIES.filter((p) => p.slug !== projectSlug).slice(0, 2);
+    ? PORTFOLIO_PROJECTS.filter((p) => p.id !== effectiveSlug).slice(0, 3)
+    : CASE_STUDIES.filter((p) => p.slug !== effectiveSlug).slice(0, 2);
 
   const pageTitle = isVideo
     ? `${project.title} — ${project.category} | The Velora Studios`

@@ -80,6 +80,18 @@
 
   <!-- Video Productions & Work Items -->
   <url>
+    <loc>https://thevelorastudios.com/work/dubai-ai-festival</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/ktm-duke-3d-film</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/work/ai-cinematic-explainer</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://thevelorastudios.com/work/lumina-brand-film</loc>
     <priority>0.85</priority>
   </url>
