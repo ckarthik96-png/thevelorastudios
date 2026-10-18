@@ -41,6 +41,22 @@ export default function TermsPage() {
             <p>
               While we strive to ensure continuous uptime and accurate information, this website and its content are provided on an "as is" basis without warranty of any kind.
             </p>
+
+            <h2>5. Intellectual Property, Client Footage &amp; Commercial Rights</h2>
+            <p>
+              We believe in transparent, unencumbered rights for the brands we partner with:
+            </p>
+            <ul>
+              <li><strong>Commercial Master Ownership:</strong> Upon settlement of the agreed project fees, all delivered master videos, commercial cutdowns, animations, and sound compositions become the exclusive intellectual property of the client with full global broadcast and digital exhibition rights.</li>
+              <li><strong>Confidential Client Footage:</strong> Raw footage, unedited b-roll, executive likenesses, and voice recordings provided by clients remain the exclusive property of the client. {STUDIO_CONFIG.name} preserves all client media on access-restricted encrypted storage.</li>
+              <li><strong>Strict AI Media Governance:</strong> Client media, product CAD data, and brand assets are never shared with public generative AI pools or used to train third-party foundation models without prior written consent.</li>
+              <li><strong>Portfolio Exhibition:</strong> Unless restricted by an explicit non-disclosure agreement (NDA) or client embargo, {STUDIO_CONFIG.name} reserves the standard industry right to display delivered work in our studio portfolio, showreel, and case studies.</li>
+            </ul>
+
+            <h2>6. Governing Jurisdiction &amp; Legal Inquiries</h2>
+            <p>
+              These terms are governed by the laws of India. For commercial contracts, mutual NDA execution, or compliance inquiries, please contact our studio legal desk at <code>{STUDIO_CONFIG.displayEmail}</code>.
+            </p>
           </div>
         </div>
       </section>

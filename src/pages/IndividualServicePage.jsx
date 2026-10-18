@@ -6,7 +6,22 @@ import SEO from '../components/SEO';
 
 export default function IndividualServicePage() {
   const { serviceSlug } = useParams();
-  const service = DETAILED_SERVICES[serviceSlug];
+
+  const SERVICE_ALIASES = {
+    'corporate-videos': 'ads-brand-films',
+    'promotional-videos': 'ads-brand-films',
+    'ai-video-ads': 'ai-videos',
+    'ai-generated-video-advertisements': 'ai-videos',
+    'ai-video-generation': 'ai-videos',
+    'social-media-reels': 'social-media',
+    'short-form-content': 'social-media',
+    'product-videos-and-brand-films': 'product-videos',
+    'event-filming': 'event-coverage',
+    'post-production': 'films-post-production'
+  };
+
+  const effectiveSlug = SERVICE_ALIASES[serviceSlug] || serviceSlug;
+  const service = DETAILED_SERVICES[effectiveSlug];
   const [openFaq, setOpenFaq] = useState(0);
 
   if (!service) {

@@ -48,12 +48,20 @@
     <priority>0.90</priority>
   </url>
   <url>
+    <loc>https://thevelorastudios.com/services/product-videos</loc>
+    <priority>0.90</priority>
+  </url>
+  <url>
     <loc>https://thevelorastudios.com/services/product-explainers</loc>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://thevelorastudios.com/services/event-coverage</loc>
     <priority>0.90</priority>
   </url>
   <url>
     <loc>https://thevelorastudios.com/services/event-production</loc>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://thevelorastudios.com/services/green-screen-vfx</loc>

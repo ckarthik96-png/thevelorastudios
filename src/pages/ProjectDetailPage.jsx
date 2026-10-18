@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, CheckCircle2, Target, Cpu, Trophy, Clock, MapPin } from 'lucide-react';
 import { PORTFOLIO_PROJECTS, CASE_STUDIES } from '../data/studioData';
 import SEO from '../components/SEO';
 
@@ -35,11 +35,17 @@ export default function ProjectDetailPage() {
     ? `${project.title} — ${project.category} | The Velora Studios`
     : `${project.title} | Case Study | The Velora Studios`;
 
-  const metaDescription = isVideo ? project.description : project.summary;
+  const metaDescription = isVideo
+    ? `${project.description} Discover how The Velora Studios executed ${project.title}.`
+    : project.summary;
 
   return (
     <div className="page-wrapper project-detail-page">
-      <SEO customTitle={pageTitle} customDescription={metaDescription} />
+      <SEO
+        customTitle={pageTitle}
+        customDescription={metaDescription}
+        videoData={isVideo ? project : null}
+      />
 
       {/* Top Breadcrumb & Hero */}
       <section className="project-detail-hero">
@@ -72,7 +78,7 @@ export default function ProjectDetailPage() {
                 <span className="meta-bar-val">{project.year}</span>
               </div>
               <div className="meta-bar-item">
-                <span className="meta-bar-label">{isVideo ? 'Production Market' : 'Exploration Status'}</span>
+                <span className="meta-bar-label">{isVideo ? 'Client Market' : 'Status'}</span>
                 <span className="meta-bar-val highlight-val">
                   {isVideo ? project.location : project.statusBadge}
                 </span>
@@ -107,7 +113,7 @@ export default function ProjectDetailPage() {
         </div>
       </section>
 
-      {/* Narrative & Deep Dive Body */}
+      {/* Narrative & Deep Dive Body: Objective, Solution, Result */}
       <section className="section-spacing project-case-study-body">
         <div className="container">
           <div className="case-study-columns-layout">
@@ -115,31 +121,52 @@ export default function ProjectDetailPage() {
             <div className="case-study-narrative">
               {isVideo ? (
                 <>
+                  {/* 1. Project Objective */}
                   <div className="narrative-block">
-                    <span className="editorial-label">THE CREATIVE BRIEF</span>
-                    <h2 className="narrative-heading font-serif">Storytelling that connects with the audience</h2>
-                    <p className="narrative-text">{project.description}</p>
-                  </div>
-
-                  <div className="narrative-block">
-                    <span className="editorial-label">PRODUCTION CAPABILITIES</span>
-                    <h2 className="narrative-heading font-serif">Execution &amp; craft disciplines</h2>
-                    <ul className="narrative-objectives-list">
-                      {project.scope.map((scopeItem, i) => (
-                        <li key={i}>
-                          <CheckCircle2 size={16} className="objective-icon" />
-                          <span>{scopeItem}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="narrative-block">
-                    <span className="editorial-label">AUDIENCE REACH</span>
-                    <h2 className="narrative-heading font-serif">Platform distribution</h2>
+                    <span className="editorial-label">01 / PROJECT OBJECTIVE</span>
+                    <h2 className="narrative-heading font-serif">The Creative Brief &amp; Challenge</h2>
                     <p className="narrative-text">
-                      Tailored for high-impact viewing across 16:9 cinematic screens, digital ads, and 9:16 mobile feeds. Serving audiences across {project.location}.
+                      {project.objective || project.description}
                     </p>
+                    {project.challenge && (
+                      <div className="narrative-challenge-callout" style={{ marginTop: '16px', padding: '16px 20px', backgroundColor: 'var(--bg-sand-light, rgba(255,255,255,0.03))', borderRadius: '8px', borderLeft: '3px solid var(--accent-gold, #C5A059)' }}>
+                        <span className="font-mono" style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--accent-gold, #C5A059)', display: 'block', marginBottom: '6px' }}>Creative &amp; Technical Hurdle</span>
+                        <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: '1.6' }}>{project.challenge}</p>
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 2. Creative Solution & Execution */}
+                  <div className="narrative-block">
+                    <span className="editorial-label">02 / CREATIVE CRAFT &amp; EXECUTION</span>
+                    <h2 className="narrative-heading font-serif">Production Solution &amp; Techniques</h2>
+                    <p className="narrative-text">
+                      {project.solution || "We shaped the concept, visual direction, and production plan specifically around the brand's target audience and broadcast channels."}
+                    </p>
+                    <div style={{ marginTop: '20px' }}>
+                      <span className="editorial-label" style={{ fontSize: '0.75rem', marginBottom: '10px' }}>DISCIPLINES DEPLOYED</span>
+                      <ul className="narrative-objectives-list">
+                        {project.scope.map((scopeItem, i) => (
+                          <li key={i}>
+                            <CheckCircle2 size={16} className="objective-icon" />
+                            <span>{scopeItem}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  {/* 3. Final Result & Impact */}
+                  <div className="narrative-block">
+                    <span className="editorial-label">03 / FINAL RESULT &amp; IMPACT</span>
+                    <h2 className="narrative-heading font-serif">Broadcast Delivery &amp; Audience Reach</h2>
+                    <p className="narrative-text">
+                      {project.result || "Delivered ready for multi-channel distribution across widescreen displays and mobile social platforms."}
+                    </p>
+                    <div className="reach-presence-note font-mono" style={{ marginTop: '16px' }}>
+                      <MapPin size={16} className="pin-icon" />
+                      <span>Broadcast &amp; Audience Reach: {project.location}</span>
+                    </div>
                   </div>
                 </>
               ) : (
@@ -176,7 +203,7 @@ export default function ProjectDetailPage() {
             <aside className="case-study-sidebar">
               <div className="sidebar-sticky-box">
                 <span className="editorial-label">
-                  {isVideo ? 'PRODUCTION SCOPE' : 'FINAL DELIVERABLES'}
+                  {isVideo ? 'PROJECT SCOPE' : 'FINAL DELIVERABLES'}
                 </span>
                 <h3 className="sidebar-deliverables-title font-serif">
                   {isVideo ? 'Production Scope' : 'Commission Package'}

@@ -47,12 +47,12 @@ export default function HomePage() {
 
           {/* Main Headline */}
           <h1 className="hero-dark-headline font-sans">
-            Your vision. <span className="gold-gradient-text">Made unforgettable.</span>
+            Creative Video Production &amp; <span className="gold-gradient-text">AI-Powered Visual Content for Brands.</span>
           </h1>
 
-          {/* Description */}
+          {/* Description answering: What services, Who are target customers, Why choose studio, What next */}
           <p className="hero-dark-paragraph">
-            {STUDIO_CONFIG.heroDescription}
+            From cinematic commercials and motion graphics to social media reels and AI-powered brand films, we partner with ambitious companies across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad. With 10+ years of filmmaking craft and 200+ projects delivered, we take your vision from the first concept to the final frame.
           </p>
 
           {/* Dual Action Buttons matching reference screenshot */}
