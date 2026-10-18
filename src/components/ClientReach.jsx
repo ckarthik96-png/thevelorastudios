@@ -1,6 +1,5 @@
 import React from 'react';
-import { STUDIO_CONFIG } from '../data/studioData';
-import { Globe, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 const MARKETS = [
   { city: "Dubai", label: "Middle East & GCC Hub", tag: "GMT+4" },

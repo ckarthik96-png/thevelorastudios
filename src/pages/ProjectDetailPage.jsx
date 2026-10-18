@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, CheckCircle2, Target, Cpu, Trophy, Clock, MapPin } from 'lucide-react';
+import { ArrowLeft, ArrowUpRight, CheckCircle2, MapPin } from 'lucide-react';
 import { PORTFOLIO_PROJECTS, CASE_STUDIES } from '../data/studioData';
 import SEO from '../components/SEO';
 

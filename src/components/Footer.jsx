@@ -1,40 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ArrowUpRight, ArrowUp } from 'lucide-react';
 import { STUDIO_CONFIG, SERVICES_DATA } from '../data/studioData';
 import BrandLogo from './BrandLogo';
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export default function Footer() {
+  const location = useLocation();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const currentYear = new Date().getFullYear();
+  // Do not repeat the "Start a Project" banner on pages that already display the Contact Form
+  const isContactOrHome = location.pathname === '/' || location.pathname === '/contact';
 
   return (
     <footer className="site-footer">
-      {/* Prominent Project Enquiry Banner */}
-      <div className="footer-cta-banner">
-        <div className="container footer-cta-container">
-          <div className="footer-cta-text">
-            <span className="editorial-label">LET'S TALK</span>
-            <h2 className="footer-cta-headline font-serif">
-              Let’s make your next idea worth watching.
-            </h2>
-            <p className="footer-cta-subtext">
-              Planning a campaign, launching a product, organising an event, or building your content calendar? Tell us what you have in mind.
-            </p>
+      {/* Prominent Project Enquiry Banner (shown on pages without embedded contact form) */}
+      {!isContactOrHome && (
+        <>
+          <div className="footer-cta-banner">
+            <div className="container footer-cta-container">
+              <div className="footer-cta-text">
+                <span className="editorial-label">LET'S TALK</span>
+                <h2 className="footer-cta-headline font-serif">
+                  Let’s make your next idea worth watching.
+                </h2>
+                <p className="footer-cta-subtext">
+                  Planning a campaign, launching a product, organising an event, or building your content calendar? Tell us what you have in mind.
+                </p>
+              </div>
+              <div className="footer-cta-action">
+                <Link to="/contact" className="btn btn-primary footer-main-cta">
+                  <span>Start a Project</span>
+                  <ArrowUpRight size={17} />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="footer-cta-action">
-            <Link to="/contact" className="btn btn-primary footer-main-cta">
-              <span>Start a Project</span>
-              <ArrowUpRight size={17} />
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      <div className="horizontal-divider" />
+          <div className="horizontal-divider" />
+        </>
+      )}
 
       {/* Main Footer Content */}
       <div className="container footer-main-content">
@@ -58,7 +65,7 @@ export default function Footer() {
             <ul className="footer-nav-list">
               {SERVICES_DATA.map((srv) => (
                 <li key={srv.id}>
-                  <Link to="/services">{srv.title}</Link>
+                  <Link to={`/services/${srv.id}`}>{srv.title}</Link>
                 </li>
               ))}
             </ul>
@@ -111,7 +118,7 @@ export default function Footer() {
         {/* Footer Bottom Bar */}
         <div className="footer-bottom-bar">
           <p className="copyright-note">
-            &copy; {currentYear} {STUDIO_CONFIG.name}. All rights reserved.
+            &copy; {CURRENT_YEAR} {STUDIO_CONFIG.name}. All rights reserved.
           </p>
 
           <div className="footer-legal-links">

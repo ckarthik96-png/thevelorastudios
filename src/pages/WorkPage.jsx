@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
 import WorkSection from '../components/WorkSection';
 import ClientReach from '../components/ClientReach';
 import SEO from '../components/SEO';
@@ -31,24 +29,6 @@ export default function WorkPage() {
 
       {/* Client Reach */}
       <ClientReach />
-
-      {/* Closing CTA */}
-      <section className="section-spacing about-closing-cta">
-        <div className="container text-center">
-          <h2 className="about-cta-headline font-serif">
-            Have a project in mind? Let's start a conversation.
-          </h2>
-          <p className="about-cta-sub">
-            Whether you need a commercial, a product launch film, or an ongoing social media series, we're ready to collaborate.
-          </p>
-          <div style={{ marginTop: '28px' }}>
-            <Link to="/contact" className="btn btn-primary">
-              <span>Start a Project</span>
-              <ArrowUpRight size={15} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

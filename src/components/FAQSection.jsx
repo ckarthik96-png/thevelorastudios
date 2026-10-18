@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FAQS_DATA } from '../data/studioData';
-import { Plus, Minus, HelpCircle } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);

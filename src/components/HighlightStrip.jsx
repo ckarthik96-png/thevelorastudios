@@ -1,6 +1,5 @@
 import React from 'react';
 import { HIGHLIGHT_STRIP } from '../data/studioData';
-import { Sparkles } from 'lucide-react';
 
 export default function HighlightStrip() {
   return (

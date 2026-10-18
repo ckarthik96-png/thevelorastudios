@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, AlertCircle, ArrowUpRight, MapPin, Mail, MessageSquare } from 'lucide-react';
+import { Send, CheckCircle2, ArrowUpRight, MapPin } from 'lucide-react';
 import { STUDIO_CONFIG, SERVICES_DATA } from '../data/studioData';
 
 export default function ContactForm() {
@@ -18,7 +18,6 @@ export default function ContactForm() {
   const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submitError, setSubmitError] = useState(null);
 
   const validate = () => {
     const errs = {};
@@ -367,8 +366,18 @@ export default function ContactForm() {
 
                     <a
                       href={STUDIO_CONFIG.bookingUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      onClick={(e) => {
+                        if (STUDIO_CONFIG.bookingUrl.startsWith('#')) {
+                          e.preventDefault();
+                          const el = document.getElementById('field-name') || document.getElementById('contact');
+                          if (el) {
+                            el.scrollIntoView({ behavior: 'smooth' });
+                            el.focus?.();
+                          }
+                        }
+                      }}
+                      target={STUDIO_CONFIG.bookingUrl.startsWith('#') ? undefined : '_blank'}
+                      rel={STUDIO_CONFIG.bookingUrl.startsWith('#') ? undefined : 'noopener noreferrer'}
                       className="btn btn-secondary"
                       style={{ padding: '12px 20px', fontSize: '0.88rem' }}
                       title="Schedule a consultation call"

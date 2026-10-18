@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
-import { PROCESS_STEPS, STUDIO_CONFIG } from '../data/studioData';
+import { PROCESS_STEPS } from '../data/studioData';
 import SEO from '../components/SEO';
 import WhyVelora from '../components/WhyVelora';
 import ClientReach from '../components/ClientReach';
@@ -50,23 +48,6 @@ export default function ProcessPage() {
       {/* Client Reach */}
       <ClientReach />
 
-      {/* Closing CTA */}
-      <section className="section-spacing about-closing-cta">
-        <div className="container text-center">
-          <h2 className="about-cta-headline font-serif">
-            Ready to bring your story to life?
-          </h2>
-          <p className="about-cta-sub">
-            Let’s collaborate to create videos that capture attention and deliver results.
-          </p>
-          <div style={{ marginTop: '28px' }}>
-            <Link to="/contact" className="btn btn-primary">
-              <span>Start a Project</span>
-              <ArrowUpRight size={15} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

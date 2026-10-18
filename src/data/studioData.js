@@ -27,15 +27,14 @@ export const STUDIO_CONFIG = {
   whatsappNumber: "+91 74834 04094",
   displayWhatsapp: "+91 74834 04094",
   whatsappUrl: "https://wa.me/917483404094",
-  bookingUrl: "https://cal.com/thevelorastudios",
+  bookingUrl: "#contact",
   bookingLabel: "Schedule a Project Call",
 
   socials: {
     instagram: "https://instagram.com/thevelorastudios",
     x: "https://x.com/velorastudios",
     linkedin: "https://linkedin.com/company/thevelorastudios",
-    youtube: "https://youtube.com/@thevelorastudios",
-    vimeo: "https://vimeo.com/thevelorastudios"
+    youtube: "https://youtube.com/@thevelorastudios"
   }
 };
 
@@ -309,7 +308,7 @@ export const PORTFOLIO_PROJECTS = [
     objective: "Create a monthly stream of 9:16 vertical videos tailored to stop feed-scrolling and drive direct checkout conversion on TikTok and Instagram.",
     challenge: "Differentiating from standard influencer unboxings with distinctive aesthetic lighting and sound-driven texture hooks.",
     solution: "Batched 16 modular vertical videos using ASMR product textures, kinetic typography hooks, and trending audio adaptations.",
-    result: "Delivered 2.8x higher average watch-through rates and a 35% reduction in customer acquisition cost for the brand.",
+    result: "Delivered broadcast-ready vertical cuts engineered for high audience retention, driving strong engagement across social media channels.",
     scope: ["Vertical 9:16 Video", "Social Strategy", "Motion Captions", "Monthly Content"],
     location: "Dubai"
   },
@@ -878,6 +877,25 @@ export const DETAILED_SERVICES = {
       }
     ]
   }
+};
+
+/**
+ * Service Route Aliases
+ * Maps conversational or legacy route slugs to canonical DETAILED_SERVICES keys
+ */
+export const SERVICE_ALIASES = {
+  'corporate-videos': 'ads-brand-films',
+  'promotional-videos': 'ads-brand-films',
+  'ai-video-ads': 'ai-videos',
+  'ai-generated-video-advertisements': 'ai-videos',
+  'ai-video-generation': 'ai-videos',
+  'social-media-reels': 'social-media',
+  'short-form-content': 'social-media',
+  'product-videos': 'product-explainers',
+  'product-videos-and-brand-films': 'product-explainers',
+  'event-coverage': 'event-production',
+  'event-filming': 'event-production',
+  'post-production': 'films-post-production'
 };
 
 /**

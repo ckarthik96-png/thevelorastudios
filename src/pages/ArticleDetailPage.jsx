@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, ArrowUpRight, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft, Clock } from 'lucide-react';
 import { INSIGHTS_ARTICLES } from '../data/studioData';
 import SEO from '../components/SEO';
 
@@ -60,22 +60,6 @@ export default function ArticleDetailPage() {
             ))}
           </div>
 
-          {/* Article Closing CTA */}
-          <div className="article-closing-box">
-            <span className="editorial-label">START A CONVERSATION</span>
-            <h3 className="closing-box-title font-serif">
-              Ready to apply these principles to your brand or website?
-            </h3>
-            <p className="closing-box-text">
-              We collaborate with founders and established businesses to build distinctive identities and purposeful digital platforms.
-            </p>
-            <div style={{ marginTop: '20px' }}>
-              <Link to="/contact" className="btn btn-primary">
-                <span>Start a Project</span>
-                <ArrowUpRight size={15} />
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
     </div>

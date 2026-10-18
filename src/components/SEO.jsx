@@ -80,13 +80,7 @@ export default function SEO({ customTitle, customDescription, videoData }) {
         { "@type": "City", "name": "Bangalore" },
         { "@type": "City", "name": "Hyderabad" }
       ],
-      "sameAs": [
-        STUDIO_CONFIG.socials.instagram,
-        STUDIO_CONFIG.socials.linkedin,
-        STUDIO_CONFIG.socials.youtube,
-        STUDIO_CONFIG.socials.vimeo,
-        STUDIO_CONFIG.socials.x
-      ]
+      "sameAs": Object.values(STUDIO_CONFIG.socials).filter(Boolean)
     };
 
     let fullSchema = organizationSchema;

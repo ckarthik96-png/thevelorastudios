@@ -1,25 +1,11 @@
 import React, { useState } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowUpRight, ArrowLeft, CheckCircle2, ChevronDown } from 'lucide-react';
-import { DETAILED_SERVICES } from '../data/studioData';
+import { DETAILED_SERVICES, SERVICE_ALIASES } from '../data/studioData';
 import SEO from '../components/SEO';
 
 export default function IndividualServicePage() {
   const { serviceSlug } = useParams();
-
-  const SERVICE_ALIASES = {
-    'corporate-videos': 'ads-brand-films',
-    'promotional-videos': 'ads-brand-films',
-    'ai-video-ads': 'ai-videos',
-    'ai-generated-video-advertisements': 'ai-videos',
-    'ai-video-generation': 'ai-videos',
-    'social-media-reels': 'social-media',
-    'short-form-content': 'social-media',
-    'product-videos-and-brand-films': 'product-videos',
-    'event-filming': 'event-coverage',
-    'post-production': 'films-post-production'
-  };
-
   const effectiveSlug = SERVICE_ALIASES[serviceSlug] || serviceSlug;
   const service = DETAILED_SERVICES[effectiveSlug];
   const [openFaq, setOpenFaq] = useState(0);
@@ -156,19 +142,6 @@ export default function IndividualServicePage() {
             })}
           </div>
 
-          {/* Service Closing CTA */}
-          <div className="service-cta-card">
-            <h3 className="service-cta-heading font-serif">Ready to discuss your {service.navTitle.toLowerCase()}?</h3>
-            <p className="service-cta-text">
-              Share your project brief or book a 30-minute discovery consultation.
-            </p>
-            <div style={{ marginTop: '20px' }}>
-              <Link to="/contact" className="btn btn-primary">
-                <span>Start a Project</span>
-                <ArrowUpRight size={15} />
-              </Link>
-            </div>
-          </div>
         </div>
       </section>
     </div>

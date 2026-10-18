@@ -13,16 +13,8 @@ export default function BrandLogo({
   size = 'md',    // 'sm' | 'md' | 'lg' | 'hero'
   className = ''
 }) {
-  let contextTheme = 'dark';
-  try {
-    const ctx = useTheme();
-    if (ctx && ctx.theme) {
-      contextTheme = ctx.theme;
-    }
-  } catch (e) {
-    // Graceful fallback if used outside ThemeProvider
-  }
-
+  const themeCtx = useTheme();
+  const contextTheme = themeCtx?.theme || 'dark';
   const effectiveTheme = theme === 'auto' ? contextTheme : theme;
   const isDark = effectiveTheme === 'dark';
 

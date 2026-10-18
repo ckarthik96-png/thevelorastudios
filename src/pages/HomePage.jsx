@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, ArrowRight, Play, Film, Sparkles, MapPin, Check } from 'lucide-react';
+import { ArrowUpRight, ArrowRight, MapPin, Check } from 'lucide-react';
 import { STUDIO_CONFIG, ABOUT_STUDIO } from '../data/studioData';
 import SEO from '../components/SEO';
 import BrandLogo from '../components/BrandLogo';
@@ -52,7 +52,7 @@ export default function HomePage() {
 
           {/* Description answering: What services, Who are target customers, Why choose studio, What next */}
           <p className="hero-dark-paragraph">
-            From cinematic commercials and motion graphics to social media reels and AI-powered brand films, we partner with ambitious companies across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad. With 10+ years of filmmaking craft and 200+ projects delivered, we take your vision from the first concept to the final frame.
+            From cinematic commercials and motion graphics to social media reels and AI-powered brand films, we partner with ambitious companies across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad. Combining cinematic storytelling with modern digital craft, we take your vision from the first concept to the final frame.
           </p>
 
           {/* Dual Action Buttons matching reference screenshot */}
@@ -118,23 +118,23 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* 4 Stat Counter Cards */}
+          {/* 4 Creative Capability Pillars */}
           <div className="hero-stats-grid">
             <div className="hero-stat-card">
-              <div className="stat-card-number font-sans">10+</div>
-              <div className="stat-card-label font-sans">Years Enterprise Experience</div>
+              <div className="stat-card-number font-sans">4K</div>
+              <div className="stat-card-label font-sans">Cinema-Grade Video Production</div>
             </div>
             <div className="hero-stat-card">
-              <div className="stat-card-number font-sans">200+</div>
-              <div className="stat-card-label font-sans">Projects Completed</div>
+              <div className="stat-card-number font-sans">AI</div>
+              <div className="stat-card-label font-sans">Generative Visuals &amp; Motion</div>
             </div>
             <div className="hero-stat-card">
-              <div className="stat-card-number font-sans">100+</div>
-              <div className="stat-card-label font-sans">Happy Corporate Clients</div>
+              <div className="stat-card-number font-sans">Full</div>
+              <div className="stat-card-label font-sans">Concept-to-Delivery Craft</div>
             </div>
             <div className="hero-stat-card">
-              <div className="stat-card-number font-sans">24/7</div>
-              <div className="stat-card-label font-sans">Help Desk Support</div>
+              <div className="stat-card-number font-sans">Direct</div>
+              <div className="stat-card-label font-sans">Collaborative Client Partnership</div>
             </div>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Shield, Lock, FileVideo, Cpu } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
 import { STUDIO_CONFIG } from '../data/studioData';
 import SEO from '../components/SEO';
 

@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
 import { ABOUT_STUDIO, STUDIO_CONFIG } from '../data/studioData';
 import SEO from '../components/SEO';
 import BrandLogo from '../components/BrandLogo';
@@ -77,23 +75,6 @@ export default function AboutPage() {
       {/* Client Reach */}
       <ClientReach />
 
-      {/* Closing CTA */}
-      <section className="section-spacing about-closing-cta">
-        <div className="container text-center">
-          <h2 className="about-cta-headline font-serif">
-            Let’s make your next idea worth watching.
-          </h2>
-          <p className="about-cta-sub">
-            Planning a campaign, launching a product, organising an event, or building your content calendar? Tell us what you have in mind.
-          </p>
-          <div style={{ marginTop: '28px' }}>
-            <Link to="/contact" className="btn btn-primary">
-              <span>Start a Project</span>
-              <ArrowUpRight size={15} />
-            </Link>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

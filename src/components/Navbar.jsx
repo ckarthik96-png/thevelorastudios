@@ -24,6 +24,18 @@ export default function Navbar() {
     setMobileMenuOpen(false);
   }, [location.pathname]);
 
+  // Lock body scroll when mobile menu is open to prevent page shift
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
@@ -113,40 +125,24 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav-drawer"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer (Header stays visible above; no duplicate logo or toggle inside drawer) */}
       {mobileMenuOpen && (
-        <div className="mobile-nav-drawer" role="dialog" aria-modal="true">
+        <div className="mobile-nav-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
           <div className="container mobile-drawer-content">
-            <div className="mobile-drawer-header">
-              <Link to="/" onClick={() => setMobileMenuOpen(false)} aria-label="The Velora Studios Home">
-                <BrandLogo theme={isDark ? 'dark' : 'light'} size="md" />
-              </Link>
-              <button
-                type="button"
-                className="theme-toggle-btn"
-                onClick={toggleTheme}
-                aria-label={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-                title={`Switch to ${isDark ? 'light' : 'dark'} mode`}
-              >
-                {isDark ? (
-                  <Sun size={17} className="theme-toggle-icon sun-icon" />
-                ) : (
-                  <Moon size={17} className="theme-toggle-icon moon-icon" />
-                )}
-              </button>
-            </div>
             <ul className="mobile-links-list">
               {navLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
                     className={`mobile-nav-link font-serif ${location.pathname === link.path ? 'active' : ''}`}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {link.name}
                   </Link>
@@ -154,7 +150,12 @@ export default function Navbar() {
               ))}
             </ul>
             <div className="mobile-drawer-bottom">
-              <Link to="/contact" className="btn btn-primary" style={{ width: '100%' }}>
+              <Link
+                to="/contact"
+                className="btn btn-primary"
+                style={{ width: '100%', justifyContent: 'center' }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
                 <span>Start a Project</span>
                 <ArrowUpRight size={16} />
               </Link>

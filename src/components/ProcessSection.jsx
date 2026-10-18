@@ -1,6 +1,5 @@
 import React from 'react';
 import { PROCESS_STEPS } from '../data/studioData';
-import { ArrowRight } from 'lucide-react';
 
 export default function ProcessSection() {
   return (
