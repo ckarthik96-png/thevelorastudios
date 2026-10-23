@@ -2,7 +2,6 @@ import React from 'react';
 import { PROCESS_STEPS } from '../data/studioData';
 import SEO from '../components/SEO';
 import WhyVelora from '../components/WhyVelora';
-import ClientReach from '../components/ClientReach';
 
 export default function ProcessPage() {
   return (
@@ -44,9 +43,6 @@ export default function ProcessPage() {
 
       {/* Why Velora Pillars */}
       <WhyVelora />
-
-      {/* Client Reach */}
-      <ClientReach />
 
     </div>
   );

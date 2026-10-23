@@ -1,6 +1,5 @@
 import React from 'react';
 import ContactForm from '../components/ContactForm';
-import ClientReach from '../components/ClientReach';
 import FAQSection from '../components/FAQSection';
 import SEO from '../components/SEO';
 
@@ -14,9 +13,6 @@ export default function ContactPage() {
 
       {/* Main Contact Form Section */}
       <ContactForm />
-
-      {/* Client Reach */}
-      <ClientReach />
 
       {/* FAQ Section */}
       <FAQSection />

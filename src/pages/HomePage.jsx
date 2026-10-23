@@ -9,7 +9,6 @@ import ServicesSection from '../components/ServicesSection';
 import WorkSection from '../components/WorkSection';
 import WhyVelora from '../components/WhyVelora';
 import ProcessSection from '../components/ProcessSection';
-import ClientReach from '../components/ClientReach';
 import FAQSection from '../components/FAQSection';
 import ContactForm from '../components/ContactForm';
 
@@ -210,11 +209,6 @@ export default function HomePage() {
           7. OUR PROCESS (5 Steps)
           ========================================================================= */}
       <ProcessSection />
-
-      {/* =========================================================================
-          8. CLIENT REACH (Dubai, Canada, Bangalore, Chennai)
-          ========================================================================= */}
-      <ClientReach />
 
       {/* =========================================================================
           9. FREQUENTLY ASKED QUESTIONS (8 FAQs)

@@ -3,7 +3,6 @@ import { ABOUT_STUDIO, STUDIO_CONFIG } from '../data/studioData';
 import SEO from '../components/SEO';
 import BrandLogo from '../components/BrandLogo';
 import WhyVelora from '../components/WhyVelora';
-import ClientReach from '../components/ClientReach';
 
 export default function AboutPage() {
   return (
@@ -71,9 +70,6 @@ export default function AboutPage() {
 
       {/* Why Velora (4 Pillars) */}
       <WhyVelora />
-
-      {/* Client Reach */}
-      <ClientReach />
 
     </div>
   );

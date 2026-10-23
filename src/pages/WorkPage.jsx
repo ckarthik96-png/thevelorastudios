@@ -1,6 +1,5 @@
 import React from 'react';
 import WorkSection from '../components/WorkSection';
-import ClientReach from '../components/ClientReach';
 import SEO from '../components/SEO';
 
 export default function WorkPage() {
@@ -26,9 +25,6 @@ export default function WorkPage() {
 
       {/* Video Portfolio Grid with Filters */}
       <WorkSection hideHeader={true} />
-
-      {/* Client Reach */}
-      <ClientReach />
     </div>
   );
 }
