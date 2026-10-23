@@ -1,7 +1,6 @@
 import React from 'react';
 import ServicesSection from '../components/ServicesSection';
 import WhyVelora from '../components/WhyVelora';
-import ProcessSection from '../components/ProcessSection';
 import SEO from '../components/SEO';
 
 export default function ServicesPage() {
@@ -30,9 +29,6 @@ export default function ServicesPage() {
 
       {/* Why Velora (4 Pillars) */}
       <WhyVelora />
-
-      {/* Our Process (5 Steps) */}
-      <ProcessSection />
     </div>
   );
 }

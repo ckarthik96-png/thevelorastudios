@@ -8,7 +8,6 @@ import HighlightStrip from '../components/HighlightStrip';
 import ServicesSection from '../components/ServicesSection';
 import WorkSection from '../components/WorkSection';
 import WhyVelora from '../components/WhyVelora';
-import ProcessSection from '../components/ProcessSection';
 import FAQSection from '../components/FAQSection';
 import ContactForm from '../components/ContactForm';
 
@@ -204,11 +203,6 @@ export default function HomePage() {
           6. WHY VELORA (4 Key Pillars)
           ========================================================================= */}
       <WhyVelora />
-
-      {/* =========================================================================
-          7. OUR PROCESS (5 Steps)
-          ========================================================================= */}
-      <ProcessSection />
 
       {/* =========================================================================
           9. FREQUENTLY ASKED QUESTIONS (8 FAQs)
