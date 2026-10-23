@@ -80,7 +80,7 @@ export default function PrivacyPage() {
               <strong>{STUDIO_CONFIG.name}</strong><br />
               Email: <code>{STUDIO_CONFIG.displayEmail}</code><br />
               Phone / WhatsApp: <code>{STUDIO_CONFIG.displayPhone}</code><br />
-              Bangalore, India • Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad.
+              Bangalore, India • Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Chennai.
             </p>
           </div>
         </div>

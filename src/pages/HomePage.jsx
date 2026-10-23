@@ -52,7 +52,7 @@ export default function HomePage() {
 
           {/* Description answering: What services, Who are target customers, Why choose studio, What next */}
           <p className="hero-dark-paragraph">
-            From cinematic commercials and motion graphics to social media reels and AI-powered brand films, we partner with ambitious companies across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad. Combining cinematic storytelling with modern digital craft, we take your vision from the first concept to the final frame.
+            From cinematic commercials and motion graphics to social media reels and AI-powered brand films, we partner with ambitious companies across Dubai, Saudi Arabia, Canada, Bangalore, and Chennai. Combining cinematic storytelling with modern digital craft, we take your vision from the first concept to the final frame.
           </p>
 
           {/* Dual Action Buttons matching reference screenshot */}
@@ -212,7 +212,7 @@ export default function HomePage() {
       <ProcessSection />
 
       {/* =========================================================================
-          8. CLIENT REACH (Dubai, Canada, Bangalore, Hyderabad)
+          8. CLIENT REACH (Dubai, Canada, Bangalore, Chennai)
           ========================================================================= */}
       <ClientReach />
 

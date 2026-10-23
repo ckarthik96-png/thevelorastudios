@@ -8,7 +8,7 @@ export default function SEO({ customTitle, customDescription, videoData }) {
   useEffect(() => {
     const meta = SEO_METADATA[location.pathname] || {
       title: "The Velora Studios | Video Production, Advertising, Motion Graphics & AI Agency",
-      description: "We create videos that bring brands, products, events, and stories to life. Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
+      description: "We create videos that bring brands, products, events, and stories to life. Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Chennai."
     };
 
     const titleToSet = customTitle || meta.title;
@@ -64,7 +64,7 @@ export default function SEO({ customTitle, customDescription, videoData }) {
       "alternateName": "The Velora Studios",
       "url": "https://thevelorastudios.com",
       "logo": "https://thevelorastudios.com/favicon.png",
-      "description": "Video production, advertising, motion graphics, and AI-powered storytelling agency based in Bangalore, serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad.",
+      "description": "Video production, advertising, motion graphics, and AI-powered storytelling agency based in Bangalore, serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Chennai.",
       "telephone": "+917483404094",
       "email": "hello@thevelorastudios.com",
       "address": {
@@ -78,7 +78,7 @@ export default function SEO({ customTitle, customDescription, videoData }) {
         { "@type": "Country", "name": "Saudi Arabia" },
         { "@type": "Country", "name": "Canada" },
         { "@type": "City", "name": "Bangalore" },
-        { "@type": "City", "name": "Hyderabad" }
+        { "@type": "City", "name": "Chennai" }
       ],
       "sameAs": Object.values(STUDIO_CONFIG.socials).filter(Boolean)
     };

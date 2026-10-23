@@ -10,9 +10,9 @@ export const STUDIO_CONFIG = {
   heroIntro: "VIDEO PRODUCTION · ADVERTISING · AI VISUALS",
   heroHeadline: "Creative Video Production & AI-Powered Visual Content for Brands.",
   heroDescription: "We create videos that bring brands, products, events, and stories to life. From cinematic advertising and motion graphics to social media content and AI-powered films, The Velora Studios takes your project from the first idea to the final frame.",
-  heroLocations: "Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad.",
+  heroLocations: "Serving clients in Dubai, Saudi Arabia, Canada, Bangalore, and Chennai.",
   baseLocation: "Based in Bangalore. Serving clients in India and internationally.",
-  clientMarkets: ["Dubai", "Saudi Arabia", "Canada", "Bangalore", "Hyderabad"],
+  clientMarkets: ["Dubai", "Saudi Arabia", "Canada", "Bangalore", "Chennai"],
   domain: "thevelorastudios.com",
   canonicalUrl: "https://thevelorastudios.com",
   showreelUrl: "/videos/dubai-ai-festival-motion.mp4",
@@ -291,7 +291,7 @@ export const PORTFOLIO_PROJECTS = [
     solution: "Deployed an on-site mobile post-production unit with multi-camera ingest, live grading, and dedicated motion editors.",
     result: "Generated over 500k event video views during the conference, with the final aftermovie driving early-bird registrations for the following year.",
     scope: ["Event Coordination", "Multi-cam Filming", "Same-Day Teaser", "Aftermovie"],
-    location: "Hyderabad"
+    location: "Chennai"
   },
   {
     id: "velvet-glow-social",
@@ -374,7 +374,7 @@ export const WHY_VELORA_PILLARS = [
   {
     number: "04",
     title: "Collaboration across locations",
-    description: "We work with clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad through clear briefs, shared references, and structured feedback."
+    description: "We work with clients in Dubai, Saudi Arabia, Canada, Bangalore, and Chennai through clear briefs, shared references, and structured feedback."
   }
 ];
 
@@ -427,7 +427,7 @@ export const FAQS_DATA = [
   },
   {
     q: "Do you work with international clients?",
-    a: "Yes. We work with clients in Dubai, Saudi Arabia, and Canada, alongside clients in Bangalore and Hyderabad. We coordinate briefs, reviews, and delivery remotely where appropriate."
+    a: "Yes. We work with clients in Dubai, Saudi Arabia, and Canada, alongside clients in Bangalore and Chennai. We coordinate briefs, reviews, and delivery remotely where appropriate."
   },
   {
     q: "Can you create AI product videos?",
@@ -453,11 +453,11 @@ export const FAQS_DATA = [
 export const SEO_METADATA = {
   "/": {
     title: "The Velora Studios | Video Production & AI Creative Agency",
-    description: "Bangalore video production agency creating ads, motion graphics, AI videos, product explainers and event films for clients in Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
+    description: "Bangalore video production agency creating ads, motion graphics, AI videos, product explainers and event films for clients in Dubai, Saudi Arabia, Canada, Bangalore, and Chennai."
   },
   "/about": {
     title: "About The Velora Studios | Storytelling & Video Agency",
-    description: "Learn about The Velora Studios, an advertising and video production agency in Bangalore serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
+    description: "Learn about The Velora Studios, an advertising and video production agency in Bangalore serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Chennai."
   },
   "/services": {
     title: "Video Production & Creative Services | The Velora Studios",
@@ -473,7 +473,7 @@ export const SEO_METADATA = {
   },
   "/contact": {
     title: "Start a Project | Contact The Velora Studios",
-    description: "Plan your next campaign, commercial or video with The Velora Studios. Based in Bangalore, serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Hyderabad."
+    description: "Plan your next campaign, commercial or video with The Velora Studios. Based in Bangalore, serving clients across Dubai, Saudi Arabia, Canada, Bangalore, and Chennai."
   },
   "/privacy": {
     title: "Privacy Policy | The Velora Studios",
