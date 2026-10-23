@@ -6,7 +6,7 @@ const MARKETS = [
   { city: "Saudi Arabia", label: "GCC Regional Market", tag: "GMT+3" },
   { city: "Canada", label: "North American Market", tag: "EST / PST" },
   { city: "Bangalore", label: "Studio Headquarters", tag: "IST (GMT+5:30)" },
-  { city: "Chennai", label: "Media & Tech Corridor", tag: "IST (GMT+5:30)" }
+  { city: "Chennai" }
 ];
 
 export default function ClientReach() {
@@ -31,12 +31,16 @@ export default function ClientReach() {
 
             <div className="reach-markets-grid">
               {MARKETS.map((m) => (
-                <div key={m.city} className="market-location-box">
-                  <div className="market-top">
+                <div
+                  key={m.city}
+                  className="market-location-box"
+                  style={!m.label ? { display: 'flex', flexDirection: 'column', justifyContent: 'center' } : undefined}
+                >
+                  <div className="market-top" style={!m.label ? { marginBottom: 0 } : undefined}>
                     <span className="market-city font-serif">{m.city}</span>
-                    <span className="market-tz font-mono">{m.tag}</span>
+                    {m.tag && <span className="market-tz font-mono">{m.tag}</span>}
                   </div>
-                  <span className="market-sub">{m.label}</span>
+                  {m.label && <span className="market-sub">{m.label}</span>}
                 </div>
               ))}
             </div>
